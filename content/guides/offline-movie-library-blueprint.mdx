@@ -1,0 +1,134 @@
+---
+title: "Offline Movie Library Blueprint"
+description: "A blueprint for storage, naming, metadata, and playback workflows in a modern offline media setup."
+date: "2026-07-16"
+category: "Pillar Guide"
+tags:
+  - offline movie library
+  - offline media library
+  - personal netflix
+related:
+  - how-to-organize-downloaded-movies
+  - build-personal-netflix
+  - movie-folder-structure-guide
+faq:
+  - q: "What is an offline movie library?"
+    a: "A structured collection of local video files with consistent naming, metadata, posters, and playback state — browsable without internet."
+  - q: "Do I need a NAS for an offline movie library?"
+    a: "No. Phone storage, SD cards, and USB drives work. A NAS is optional for households sharing large archives."
+  - q: "How big should my top-level folders be?"
+    a: "Keep three to five top-level buckets: Movies, TV Shows, Personal Videos, and optionally Anime. Avoid deep genre trees."
+  - q: "Can an offline movie library sync across devices?"
+    a: "Yes. With MyBinge, sign in to sync favorites and watch progress between Android phone and TV while files stay local."
+  - q: "Is internet required after setup?"
+    a: "No for playback and browsing. Internet is optional for refreshing posters, trailers, and metadata."
+---
+An offline movie library is more than a folder of files — it is a system. Storage location, folder hierarchy, naming rules, metadata policies, and playback conventions all work together. When any layer is missing, the library feels fragile: wrong posters, lost watch progress, and search that returns nothing useful.
+
+This blueprint gives you a production-ready foundation for building and maintaining an offline movie library on Android, whether you have fifty titles or five thousand.
+
+## Design principles for long-term scale
+
+Four principles keep offline movie libraries healthy as they grow:
+
+- **One source of truth** — pick a primary storage location and avoid editing copies in multiple places
+- **Deterministic naming** — Movie Title (Year) everywhere, no exceptions for primary files
+- **Metadata as maintenance** — treat poster fixes as normal ingestion work, not emergencies
+- **App-layer discovery** — folders are storage; the movie collection app is how people browse
+
+These principles apply whether you use MyBinge, a server-based tool, or manual browsing. Structure on disk makes every app work better.
+
+## Storage strategy
+
+Choose storage based on how you watch:
+
+- **Phone internal storage** — best for small collections and travel
+- **MicroSD card** — good mid-size libraries on phones with expandable storage
+- **USB OTG drives** — large archives you swap or leave connected on Android TV
+- **Network-attached storage** — optional for households; requires paths your app can reach
+
+Plan for growth. A 1 TB drive holds roughly 200–400 movies at 1080p depending on encoding. Track usage with our [Collection Planner](/tools/collection-planner) before buying more storage.
+
+Keep one primary library root. Backup critical folders to a second drive monthly, but do not actively edit both copies — pick one master and mirror it.
+
+## Folder hierarchy template
+
+Use this hierarchy as your default:
+
+```
+My Library/
+  Movies/
+    Movie Title (Year)/
+  TV Shows/
+    Show Name/
+      Season 01/
+  Personal Videos/
+    Events/
+  Anime/
+    Series Name/
+      Season 01/
+```
+
+Generate a customized version with the [Folder Structure Generator](/tools/folder-structure-generator). See the [Movie Folder Structure Guide](/guides/movie-folder-structure-guide) for TV and anime specifics.
+
+## Naming and ingestion workflow
+
+Every new file passes through four steps:
+
+1. **Receive** — download or copy to a temporary Inbox folder
+2. **Normalize** — clean filename with the [Movie Filename Formatter](/tools/movie-filename-formatter)
+3. **Place** — move into Movie Title (Year) folder under Movies
+4. **Scan** — let MyBinge index and match metadata
+
+Never drop raw downloads directly into Movies with torrent-style names. The Inbox folder isolates chaos before it infects your catalog.
+
+## Metadata standards
+
+Metadata turns filenames into posters. Follow these standards:
+
+- Folder name must include release year in parentheses
+- Primary video filename mirrors folder title
+- Fix mismatches inside the app within 24 hours of ingestion
+- Refresh posters quarterly or when TMDB updates art you prefer
+
+Wrong metadata erodes trust fast — especially for family libraries. One wrong poster for a kids movie matters more than fifty correct matches for adult titles.
+
+## Playback conventions
+
+Define household rules for playback state:
+
+- **Continue Watching** — resume from last position unless explicitly restarted
+- **Watched state** — mark complete at 90% progress or manual toggle
+- **Profiles** — separate Kids and Everyone browsing where supported
+- **Subtitles** — store `.srt` files alongside video; verify with [Subtitle Checker](/tools/subtitle-checker)
+
+Consistent playback behavior makes the library feel professional across phone and TV.
+
+## Android TV integration
+
+An offline movie library reaches its full potential on a big screen. Connect the same storage paths on Android TV, sign into MyBinge, and browse poster grids from the couch. Phone becomes the remote control for library management; TV becomes the primary viewing surface.
+
+This is the core of a [personal Netflix](/guides/build-personal-netflix) experience — your files, your posters, your schedule.
+
+## Maintenance calendar
+
+| Frequency | Task |
+| --- | --- |
+| Weekly | Ingest new files, rename, scan, fix metadata outliers |
+| Monthly | Check storage usage, remove duplicates, verify backups |
+| Quarterly | Refresh posters, audit unwatched backlog, update folder template docs |
+
+## When to migrate from folders-only to a library app
+
+If you spend more than a minute finding a movie, you need a library app layer. VLC and MX Player excel at opening known files; they do not organize hundreds of titles with posters and progress tracking.
+
+MyBinge adds the catalog layer without server complexity. Point it at your blueprint folders and browse immediately.
+
+## Next steps
+
+1. Generate your folder template
+2. Rename existing movies to Movie Title (Year)
+3. Scan with MyBinge on phone and TV
+4. Read [How to Organize Downloaded Movies](/guides/how-to-organize-downloaded-movies) for step-by-step migration
+
+Your offline movie library blueprint is the foundation. Consistent execution over weeks beats a perfect one-day cleanup that you never repeat.

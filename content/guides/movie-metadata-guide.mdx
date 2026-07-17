@@ -1,0 +1,121 @@
+---
+title: "Movie Metadata Guide"
+description: "How movie metadata works, why matches fail, and how to fix posters, titles, and descriptions in your offline library."
+date: "2026-07-12"
+category: "Pillar Guide"
+tags:
+  - movie metadata
+  - poster matching
+  - tmdb metadata
+related:
+  - movie-organizer-complete-guide
+  - how-to-organize-downloaded-movies
+  - movie-filename-formatter
+faq:
+  - q: "What is movie metadata?"
+    a: "Information about a film — title, year, poster, overview, genres, cast — used to display your files as a browsable catalog."
+  - q: "Why does my movie show the wrong poster?"
+    a: "Usually a filename or year mismatch. Fix the folder name to Movie Title (Year) or manually select the correct match."
+  - q: "Does metadata require internet?"
+    a: "Initial fetch needs internet. Cached metadata and playback work offline afterward."
+  - q: "Where does MyBinge get metadata?"
+    a: "TMDB provides posters, overviews, and trailers for matched titles."
+  - q: "Can I fix metadata without renaming files?"
+    a: "Manual match inside the app works, but renaming prevents the same mismatch on rescan."
+---
+Movie metadata transforms a filename into a poster on your home screen. When metadata works, your offline library feels like a streaming service. When it fails, you see wrong artwork, missing descriptions, or duplicate entries — and trust in the catalog collapses.
+
+This guide explains how metadata matching works, why it breaks, and how to fix it permanently in your offline movie library.
+
+## What metadata includes
+
+For each matched title, a video library app typically stores:
+
+- Display title and original release year
+- Poster and backdrop artwork
+- Plot overview and tagline
+- Genres, runtime, and content rating
+- Cast and crew (where supported)
+- Trailer links
+
+MyBinge uses TMDB as the primary metadata source. TMDB matches based on parsed title and year from your folder or filename.
+
+## How automatic matching works
+
+The matching pipeline is straightforward:
+
+1. Scanner finds video file at path
+2. Parser extracts title and year from folder/filename
+3. App queries TMDB with parsed values
+4. Best match populates poster and details
+5. Result cached locally for offline browsing
+
+Match quality is directly proportional to naming consistency. `Inception (2010)` matches reliably. `Inception.2010.1080p.BluRay.x264-GROUP.mkv` may match — or may not — depending on parser quality.
+
+Always normalize names with the [Movie Filename Formatter](/tools/movie-filename-formatter) before expecting perfect automation.
+
+## Common metadata failures and fixes
+
+### Wrong poster, right file
+**Cause:** Year missing or incorrect in folder name; remakes confused (Spider-Man 2002 vs 2012).
+**Fix:** Rename folder to exact `Movie Title (Year)`. Rescan or manual rematch.
+
+### No poster at all
+**Cause:** Unparseable filename; special characters; TV file in Movies folder.
+**Fix:** Normalize name; verify file is in correct top-level category.
+
+### Duplicate entries
+**Cause:** Same movie in two paths or two files in one folder treated as separate titles.
+**Fix:** Consolidate to one folder, one primary file.
+
+### TV show listed as movie
+**Cause:** Episode file under Movies instead of TV Shows hierarchy.
+**Fix:** Move to [TV folder structure](/guides/how-to-organize-tv-shows).
+
+Use the [Metadata Finder](/tools/metadata-finder) to parse messy filenames and generate a clean TMDB search query.
+
+## Manual matching best practices
+
+When automatic match fails:
+
+1. Open title in MyBinge
+2. Search TMDB for correct film
+3. Confirm year and poster before saving
+4. Rename folder to match chosen title to prevent repeat failure
+
+Document manual fixes in a simple spreadsheet if you have hundreds of outliers — note original filename, corrected title, and year.
+
+## Metadata maintenance schedule
+
+Metadata is not set-and-forget:
+
+- **On ingest** — verify new titles within 24 hours
+- **Monthly** — spot-check Recently Added row
+- **Quarterly** — refresh posters when TMDB updates preferred artwork
+- **After bulk rename** — trigger full rescan
+
+Treat metadata fixes as part of ingestion, not emergency repair.
+
+## Subtitles and metadata
+
+Metadata and subtitles are separate systems. A perfectly matched poster does not guarantee subtitles exist. Pair `.srt` files with matching base names and verify with [Subtitle Checker](/tools/subtitle-checker).
+
+## Advanced: edition handling
+
+Director's cuts, extended editions, and IMAX versions confuse matchers when year alone is insufficient:
+
+- Use edition tag in filename: `Blade Runner 2049 (2017) Final Cut.mkv`
+- If TMDB lacks edition, pick closest theatrical match
+- Accept that some editions require permanent manual override
+
+## Metadata and privacy
+
+Metadata fetch sends title strings to TMDB — not your video files. Your movies stay local. Only search queries leave the device during refresh.
+
+## Related guides
+
+- [Movie Organizer Complete Guide](/guides/movie-organizer-complete-guide)
+- [How to Organize Downloaded Movies](/guides/how-to-organize-downloaded-movies)
+- [Fixing Wrong Posters](/blog/fixing-wrong-movie-posters) — quick troubleshooting blog
+
+Clean names first, metadata second, maintenance always. That sequence keeps your offline movie library trustworthy on every screen.

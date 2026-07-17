@@ -1,0 +1,127 @@
+---
+title: "Build a Personal Netflix with Local Files"
+description: "Create a Netflix-like browsing and playback experience from your own downloaded movies and TV shows on Android."
+date: "2026-07-08"
+category: "Pillar Guide"
+tags:
+  - personal netflix
+  - offline streaming
+  - offline movie library
+related:
+  - offline-movie-library-blueprint
+  - best-movie-collection-app-android
+  - video-library-app-guide
+faq:
+  - q: "What is a personal Netflix?"
+    a: "A self-hosted browsing experience — poster grids, Continue Watching, categories — built from video files you store locally."
+  - q: "Do I need a server for a personal Netflix?"
+    a: "Not on Android. MyBinge turns local folders into a streaming-style interface without Plex or Jellyfin servers."
+  - q: "Can a personal Netflix work offline?"
+    a: "Yes. Files and cached metadata live on your device; playback does not require internet."
+  - q: "Does personal Netflix work on TV?"
+    a: "Yes. Android TV with MyBinge provides couch-friendly poster browsing from the same library."
+  - q: "Is building a personal Netflix legal?"
+    a: "You are responsible for content you store. This guide covers organization of files you have rights to use."
+---
+Streaming services optimize for licensing catalogs you rent month to month. A personal Netflix optimizes for files you own, store, and control — same poster-grid experience, no subscription, full offline access.
+
+This guide shows how to build a personal Netflix from local movies and TV on Android using structure, metadata, and MyBinge.
+
+## What personal Netflix means in practice
+
+You are not cloning Netflix's server infrastructure. You are replicating the **experience**:
+
+- Poster grid home screen
+- Continue Watching row
+- Categories and favorites
+- Search by title
+- Season lists for TV
+- Resume playback across sessions
+- Big-screen Android TV layout
+
+The content is yours — downloads, rips, personal videos — organized so discovery feels effortless.
+
+## Architecture: three layers
+
+### Layer 1 — Files on storage
+Movies and TV in consistent folders on phone, SD card, or USB. Foundation: [Offline Movie Library Blueprint](/guides/offline-movie-library-blueprint).
+
+### Layer 2 — Metadata catalog
+Posters, descriptions, genres from TMDB matching. Wrong metadata breaks the illusion instantly — invest in [Movie Metadata Guide](/guides/movie-metadata-guide) practices.
+
+### Layer 3 — App presentation
+MyBinge renders catalog as streaming UI on phone and TV. Sign in to sync Continue Watching between devices.
+
+No server process. No port forwarding. No transcoding pipeline unless your device requires it for specific codecs.
+
+## Step-by-step build process
+
+### Step 1: Consolidate storage
+Pick one primary library location. Estimate size with [Collection Planner](/tools/collection-planner). External USB often works best for TV-centric setups.
+
+### Step 2: Structure folders
+Movies, TV Shows, Personal Videos per [Movie Folder Structure Guide](/guides/movie-folder-structure-guide). Generate template with one click: [Folder Structure Generator](/tools/folder-structure-generator).
+
+### Step 3: Normalize existing files
+Batch rename with [Movie Filename Formatter](/tools/movie-filename-formatter). Migrate using [How to Organize Downloaded Movies](/guides/how-to-organize-downloaded-movies).
+
+### Step 4: Index with MyBinge
+Install from Google Play, add folders, wait for scan, fix metadata outliers.
+
+### Step 5: Configure Android TV
+Install on TV device, sign in, point at same storage paths. Poster grid becomes your new home screen.
+
+### Step 6: Maintain weekly
+Ten-minute ingest routine keeps Recently Added and Continue Watching accurate.
+
+## Personal Netflix vs Plex/Jellyfin
+
+| Aspect | Personal Netflix (MyBinge) | Plex/Jellyfin |
+| --- | --- | --- |
+| Setup time | Minutes | Hours to days |
+| Server required | No | Usually yes |
+| Android TV UI | Native | Varies |
+| Offline-first | Yes | Depends on config |
+| Best for | Local Android libraries | Whole-home network streaming |
+
+Detailed comparisons: [MyBinge vs Plex](/comparisons/mybinge-vs-plex), [MyBinge vs Jellyfin](/comparisons/mybinge-vs-jellyfin).
+
+## Profiles and household use
+
+Family personal Netflix means:
+
+- Shared folder structure everyone understands
+- Optional profile separation for Kids vs Everyone
+- Consistent Continue Watching so parents and kids do not reset each other's progress
+
+Teach household members to browse posters, not hunt folders.
+
+## Content types beyond movies
+
+Personal Netflix is not movies-only:
+
+- TV series with season navigation
+- Anime collections
+- Personal travel and family videos
+- YouTube favorites (where supported in app)
+
+Breadth increases daily use — organize each type in its top-level folder.
+
+## Why people switch from streaming to personal Netflix
+
+- No monthly fees for content you already downloaded
+- Works offline on flights and poor connectivity
+- No titles leaving the catalog overnight
+- Full control over quality (1080p, 4K rips you preserve)
+- Privacy — viewing history stays on your devices
+
+The tradeoff is curation labor. This site's guides and tools minimize that labor to minutes per week.
+
+## Start today
+
+1. Read [Best Movie Collection App for Android](/guides/best-movie-collection-app-android)
+2. Structure one drive this weekend
+3. Install MyBinge on phone and TV
+4. Replace one streaming session with your own catalog
+
+A personal Netflix is not a weekend hack — it is a maintained library. But maintenance is far lighter than the PRD-perfect catalog you imagine, and the payoff is permanent.

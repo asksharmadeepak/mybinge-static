@@ -1,0 +1,61 @@
+---
+title: "Anime Folder Naming Tips for Offline Libraries"
+description: "Best practices for naming and folder structure when organizing anime collections on Android."
+date: "2026-07-09"
+category: "Tips"
+tags:
+  - anime organization
+  - folder naming
+  - tv shows
+related:
+  - how-to-organize-tv-shows
+  - movie-folder-structure-guide
+---
+Anime libraries break standard TV conventions — multi-cour seasons, OVAs, specials, absolute episode numbering, and inconsistent release group tags. Without naming rules, metadata matchers confuse series and your [Episode Tracker](/tools/episode-tracker) cannot help.
+
+## Use a dedicated Anime root
+
+Keep anime separate from live-action TV when possible:
+
+```
+Anime/
+└── Attack on Titan/
+    └── Season 01/
+        └── Attack on Titan S01E01.mkv
+```
+
+Or mirror TV structure under `TV Shows/` with consistent SxxExx naming — pick one approach for your whole library.
+
+## Season vs absolute numbering
+
+**Season folders** work for seasonal anime (12–24 episodes per cour). Use `Season 01`, `Season 02` with `Show S01E01` filenames.
+
+**Absolute numbering** works for long runners like One Piece: `One Piece E1050.mkv`. Choose based on how you think about the series — not how torrent sites label files.
+
+## Handle specials and OVAs
+
+Place specials in `Season 00/` or `Specials/` consistently:
+
+```
+Anime/
+└── My Hero Academia/
+    ├── Season 01/
+    └── Specials/
+        └── My Hero Academia OVA 01.mkv
+```
+
+Document your rule in a README inside the library root so future-you stays consistent.
+
+## Strip release tags before season markers
+
+Filenames like `[Group] Show Name - 12 (1080p).mkv` confuse parsers. Normalize to `Show Name S01E12.mkv` using the [Movie Filename Formatter](/tools/movie-filename-formatter) as a starting point, then adjust episode numbers manually.
+
+## Metadata expectations
+
+TMDB and AniDB coverage varies for anime. Expect more manual poster fixes than for mainstream movies. Budget time after each season ingest — see [Fixing Wrong Movie Posters](/blog/fixing-wrong-movie-posters) for shared troubleshooting patterns.
+
+## Scan with MyBinge
+
+Once folders are clean, scan in MyBinge alongside live-action TV. Separate Anime root keeps browse rows cleaner on Android TV.
+
+Related: [How to Organize TV Shows](/guides/how-to-organize-tv-shows) · [Movie Folder Structure Guide](/guides/movie-folder-structure-guide)

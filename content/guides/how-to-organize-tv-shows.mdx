@@ -1,0 +1,131 @@
+---
+title: "How to Organize TV Shows"
+description: "Folder naming, season structure, episode tracking, and metadata tips for offline TV libraries on Android."
+date: "2026-07-10"
+category: "Pillar Guide"
+tags:
+  - organize tv shows
+  - tv show library
+  - episode organization
+related:
+  - movie-folder-structure-guide
+  - movie-organizer-complete-guide
+  - how-to-organize-downloaded-movies
+faq:
+  - q: "What folder structure should TV shows use?"
+    a: "TV Shows/Show Name/Season 01/ with episode files named S01E01 or 1x01 format inside."
+  - q: "How do TV show organizers track episodes?"
+    a: "Apps like MyBinge group by season and store per-episode watch progress."
+  - q: "Should TV and movies share a folder?"
+    a: "No. Always separate TV Shows and Movies at the top level."
+  - q: "How do I handle multi-part episodes?"
+    a: "Use S01E01-E02 or Part 1/Part 2 in filename; verify parser recognizes both parts."
+  - q: "Can I track which episodes I have downloaded?"
+    a: "Yes. Use our Episode Tracker tool to checklist seasons against your collection."
+---
+TV libraries are harder than movie libraries. One show spans dozens of episodes across multiple seasons, release order differs from broadcast order, and special episodes break numbering. Without structure, you end up with flat folders of `show.s04e07.mkv` files nobody can navigate.
+
+This guide covers how to organize TV shows for offline Android libraries — folder layout, episode naming, metadata matching, and progress tracking.
+
+## TV vs movie organization
+
+Movies are one folder per title. TV is three levels minimum:
+
+```
+TV Shows / Show Name / Season / Episodes
+```
+
+Never place episode files directly under Movies. TV metadata parsers expect season grouping. Mixed libraries produce wrong posters and broken Continue Watching.
+
+## Standard TV folder template
+
+```
+TV Shows/
+└── The Office (US)/
+    ├── Season 01/
+    │   ├── The Office S01E01.mkv
+    │   └── The Office S01E02.mkv
+    └── Season 02/
+        └── ...
+```
+
+Show folder may include year for US/UK disambiguation: `The Office (US)`, `The Office (UK)`.
+
+## Episode naming conventions
+
+Pick one pattern per library and stay consistent:
+
+| Pattern | Example |
+| --- | --- |
+| SxxExx | `Breaking Bad S05E14.mkv` |
+| x.xx | `Breaking Bad 5x14.mkv` |
+| Season/Episode words | `Breaking Bad Season 05 Episode 14.mkv` |
+
+MyBinge parses common patterns automatically. Avoid random torrent tags before season markers.
+
+## Season folder numbering
+
+Use zero-padded season folders for sort order:
+
+- `Season 01` not `Season 1`
+- `Season 00` for specials when your app supports it
+
+Specials and OVAs can live in `Season 00` or `Specials/` — pick one rule for anime and stick to it.
+
+## Anime-specific organization
+
+Anime collectors often use:
+
+```
+Anime/
+└── Attack on Titan/
+    └── Season 01/
+        └── Attack on Titan S01E01.mkv
+```
+
+Or absolute episode numbering for long runners: `One Piece E1050.mkv`. Consistency matters more than which convention you choose.
+
+## Ingest workflow for new episodes
+
+1. Download to `_Inbox/TV/`
+2. Rename to standard SxxExx format
+3. Move to correct Show/Season folder
+4. Rescan library in MyBinge
+5. Verify episode appears under correct season poster
+
+Batch weekly instead of per-episode if you binge full seasons at once.
+
+## Tracking what you have vs what you need
+
+Use the [Episode Tracker](/tools/episode-tracker) to checklist seasons — mark downloaded episodes, identify gaps, and plan acquisition without duplicate downloads.
+
+## Metadata for TV shows
+
+TV metadata matches at show level first, then episode. Failures usually mean:
+
+- Wrong show year in folder name
+- Episode file in Movies folder
+- Non-standard episode string parser cannot read
+
+Fix folder placement and naming before manual override. See [Movie Metadata Guide](/guides/movie-metadata-guide) for shared troubleshooting.
+
+## Continue Watching for series
+
+Per-episode progress is essential for TV. MyBinge stores resume position per episode and surfaces the next unwatched entry in Continue Watching. Sign in on phone and TV to sync progress across devices.
+
+## Subtitles for TV
+
+TV episodes often need subtitles more than movies. Pair files:
+
+- `Show S01E01.mkv`
+- `Show S01E01.en.srt`
+
+Batch verify with [Subtitle Checker](/tools/subtitle-checker) after season ingest.
+
+## Related resources
+
+- [Movie Folder Structure Guide](/guides/movie-folder-structure-guide)
+- [Movie Organizer Complete Guide](/guides/movie-organizer-complete-guide)
+- [Anime folder tips](/blog/anime-folder-naming-tips)
+
+Organized TV libraries reward patience upfront. One afternoon structuring a favorite show saves hours of browsing over a multi-season binge.

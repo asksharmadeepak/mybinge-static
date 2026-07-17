@@ -1,0 +1,110 @@
+---
+title: "Video Library App Guide"
+description: "Everything you need to know about video library apps for local movies, TV shows, and personal videos on Android."
+date: "2026-07-14"
+category: "Pillar Guide"
+tags:
+  - video library app
+  - offline media library
+  - local video player
+related:
+  - best-movie-collection-app-android
+  - manage-local-videos-android
+  - movie-folder-structure-guide
+faq:
+  - q: "What is a video library app?"
+    a: "Software that indexes local video files and presents them in a searchable catalog with artwork and playback state."
+  - q: "Can a video library app read USB drives?"
+    a: "On supported Android devices, yes — including OTG-connected external drives."
+  - q: "Does a video library app replace VLC?"
+    a: "It complements VLC. Use a library app for discovery and VLC for edge-case codec playback if needed."
+  - q: "What file types do video library apps support?"
+    a: "Common formats include MKV, MP4, and AVI — the standard outputs of download and rip workflows."
+  - q: "Can I use one video library app on phone and TV?"
+    a: "Yes. MyBinge supports both Android phone and Android TV with synced watch progress when signed in."
+---
+A video library app sits between your file system and your screen. It answers questions folder browsing cannot: What did I watch last? Where is that movie with the blue poster? Which episode of season three am I on?
+
+This guide covers how video library apps work, what to configure on Android, and how to build a catalog that scales from a few personal clips to a multi-terabyte movie archive.
+
+## Library app vs file manager vs player
+
+Three tools, three jobs:
+
+- **File manager** — moves and renames files; no catalog intelligence
+- **Video player** — opens a known file; no library memory
+- **Video library app** — indexes folders, matches metadata, tracks progress, enables search
+
+Most people outgrow players like VLC and MX Player when collections exceed roughly fifty titles. The tipping point is discovery time — when finding a file takes longer than watching it.
+
+## Core components of a video library
+
+Every serious video library app implements four layers:
+
+### Storage layer
+Physical location of files: phone, SD card, USB, or network path. Consistent folder hierarchy makes scanning reliable. Start with the [Offline Movie Library Blueprint](/guides/offline-movie-library-blueprint).
+
+### Index layer
+Database of discovered files with parsed titles, paths, and file sizes. Rebuilt on scan; updated when folders change.
+
+### Metadata layer
+Posters, overviews, genres, and trailers from TMDB or similar. Quality depends on filename conventions — see [Movie Metadata Guide](/guides/movie-metadata-guide).
+
+### Playback layer
+Resume positions, watched state, subtitle selection, and stream decoding. Must work offline after initial index.
+
+MyBinge implements all four layers natively on Android without a separate server process.
+
+## Configuring folders for best results
+
+Use stable top-level buckets:
+
+- Movies — one folder per title, Movie Title (Year)
+- TV Shows — Show Name / Season XX / episodes
+- Personal Videos — home recordings, travel clips, tutorials
+
+Avoid genre folders on disk. Genre belongs in metadata filters inside the app. Physical genre trees create duplicate paths and broken automation.
+
+## USB and external storage on Android
+
+External drives are ideal for large video libraries. Connect via OTG, grant folder access when prompted, and add the drive path in MyBinge. Keep the same internal structure on every drive so swapping drives does not require relearning layout.
+
+Read [Manage Local Videos on Android](/guides/manage-local-videos-android) for OTG tips and permission troubleshooting.
+
+## Search and discovery features
+
+A video library app earns daily use through discovery:
+
+- Smart search by title, not filename
+- Continue Watching row
+- Recently Added for fresh ingest
+- Categories and favorites
+- Season and episode grouping for TV
+
+Configure a weekly ingest routine so Recently Added stays meaningful — see our [workflow checklist blog post](/blog/offline-media-workflow-checklist).
+
+## Android TV as the primary screen
+
+Phone is for management; TV is for viewing. A video library app that treats Android TV as a first-class target — large poster grids, remote-friendly navigation, readable text at distance — transforms how often you use your collection.
+
+Sign in on both devices to sync Continue Watching without moving files to the cloud.
+
+## Choosing your video library app
+
+| Need | Recommendation |
+| --- | --- |
+| Fast Android setup, no server | MyBinge |
+| Home server with transcoding | Plex or Jellyfin |
+| Single-file playback only | VLC or MX Player |
+| Maximum customization | Kodi |
+
+For most Android-first offline libraries, MyBinge reaches usable catalog browsing fastest.
+
+## Next steps
+
+1. Normalize filenames with the [Movie Filename Formatter](/tools/movie-filename-formatter)
+2. Generate folders with the [Folder Structure Generator](/tools/folder-structure-generator)
+3. Install MyBinge and scan your library
+4. Compare with [MyBinge vs VLC](/comparisons/mybinge-vs-vlc) if you are migrating from player-only workflows
+
+Your video library app is the interface you will use every day. Invest in folder structure once; enjoy poster browsing for years.

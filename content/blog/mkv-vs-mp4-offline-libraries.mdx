@@ -1,0 +1,60 @@
+---
+title: "MKV vs MP4 for Offline Movie Libraries"
+description: "Container format tradeoffs for downloaded movies, Android playback, and long-term library storage."
+date: "2026-07-06"
+category: "Formats"
+tags:
+  - mkv
+  - mp4
+  - video formats
+related:
+  - manage-local-videos-android
+  - video-library-app-guide
+---
+Every offline library eventually asks: MKV or MP4? Both are containers — they wrap video, audio, and subtitle tracks. The choice affects compatibility, file size, subtitle support, and whether your Android devices play smoothly without transcoding.
+
+## What each format does well
+
+**MKV (Matroska)** supports multiple audio tracks, embedded and external subtitles, chapters, and flexible codecs. Download and rip communities default to MKV for good reason — it holds complete packages in one file.
+
+**MP4** maximizes compatibility across devices, editors, and older hardware. Single-file sharing to phones and TVs often works with fewer surprises. Streaming tools and social platforms prefer MP4.
+
+## Android playback reality
+
+Modern Android phones and Android TV devices hardware-decode H.264 and H.265 inside both MKV and MP4 in apps like MyBinge. Problems appear with exotic codecs (AV1, VC-1, some DTS audio) — container matters less than what's inside.
+
+MyBinge supports MKV, MP4, and AVI for catalog scanning and playback of common encode profiles.
+
+## Subtitles and MKV
+
+MKV excels when you want multiple subtitle languages in one file or separate `.srt` pairs. Verify pairs with [Subtitle Checker](/tools/subtitle-checker). MP4 embedded subtitle support is more limited depending on encode.
+
+## Storage and quality
+
+Container does not determine size — codec and bitrate do. A 1080p x265 movie may be 4 GB in MKV or MP4 identically. Do not re-containerize entire libraries without reason; it wastes time and risks quality loss if re-encoding.
+
+## When to prefer MKV
+
+- Multi-audio-track rips
+- Anime with sign/song subtitle tracks
+- Archival copies preserving full release features
+- Collections played primarily through MyBinge or VLC on Android
+
+## When to prefer MP4
+
+- Sharing clips with non-technical family
+- Editing in mobile video tools
+- Legacy devices with narrow codec support
+- Personal videos you record yourself (phone default)
+
+## Library organization regardless of format
+
+Folder structure and naming matter more than container choice. Use [Movie Title (Year)](/guides/how-to-organize-downloaded-movies) folders and let MyBinge index both MKV and MP4 in the same catalog.
+
+## Do not mass-convert blindly
+
+Converting 500 MKV files to MP4 "for compatibility" on modern Android usually creates work without benefit. Test problematic files individually; keep MKV as archive master.
+
+Related: [Manage Local Videos on Android](/guides/manage-local-videos-android) · [Video Library App Guide](/guides/video-library-app-guide)
+
+Pick format at download time when possible. Organize consistently. Let your movie collection app handle mixed libraries without religion about containers.

@@ -1,0 +1,126 @@
+---
+title: "Movie Organizer Complete Guide"
+description: "The complete guide to organizing, naming, indexing, and maintaining a movie library with a dedicated movie organizer."
+date: "2026-07-13"
+category: "Pillar Guide"
+tags:
+  - movie organizer
+  - organize downloaded movies
+  - movie library management
+related:
+  - how-to-organize-downloaded-movies
+  - movie-metadata-guide
+  - movie-folder-structure-guide
+faq:
+  - q: "What does a movie organizer do?"
+    a: "It standardizes filenames, structures folders, matches metadata, and presents movies in a searchable catalog with watch progress."
+  - q: "Can I use a movie organizer without a computer?"
+    a: "Yes. Android apps like MyBinge scan and organize directly from phone storage and USB drives."
+  - q: "Is renaming files enough to organize movies?"
+    a: "Renaming is step one. You also need folder hierarchy, metadata matching, and ongoing maintenance."
+  - q: "How do movie organizers handle TV shows?"
+    a: "Good organizers group episodes by season and track per-episode progress separately from movies."
+  - q: "What is the best naming convention for a movie organizer?"
+    a: "Movie Title (Year) for folders and primary filenames, with quality tags at the end."
+---
+A movie organizer is both a method and a tool. The method is consistent naming, folder hierarchy, and maintenance routines. The tool is software that scans your files, matches posters, tracks watch progress, and lets you browse by artwork instead of filenames.
+
+This complete guide walks through every stage of movie organizer workflow — from empty folder to a polished offline catalog on Android.
+
+## Phase 1: Audit your current collection
+
+Before reorganizing, understand what you have:
+
+- Count total movie files and approximate storage used
+- List duplicate titles and quality variants
+- Identify files with unparseable names
+- Note which titles lack subtitles you need
+
+Use the [Collection Planner](/tools/collection-planner) to estimate storage after cleanup. Move everything into a temporary `_Inbox` folder so Movies starts empty and clean.
+
+## Phase 2: Establish naming standards
+
+Your movie organizer can only match metadata as well as your names allow. Adopt these rules:
+
+- Folder: `Movie Title (Year)`
+- File: `Movie Title (Year) [quality tags].ext`
+- No genre in path — use app categories instead
+- One primary file per folder unless Extras subfolder is intentional
+
+Run every inbox file through the [Movie Filename Formatter](/tools/movie-filename-formatter) before placement.
+
+## Phase 3: Build folder hierarchy
+
+Create the standard tree under your library root:
+
+```
+Movies/
+  The Matrix (1999)/
+  Interstellar (2014)/
+TV Shows/
+  Breaking Bad/
+    Season 01/
+Personal Videos/
+  Travel/
+```
+
+Detailed templates live in the [Movie Folder Structure Guide](/guides/movie-folder-structure-guide). Generate a copy with the [Folder Structure Generator](/tools/folder-structure-generator).
+
+## Phase 4: Ingest and scan
+
+Move normalized files from `_Inbox` into correct movie folders. Open MyBinge, add the library root, and trigger a scan. The movie organizer indexes paths, parses titles, and queries metadata services for posters.
+
+Expect 90%+ automatic match rate with clean naming. Budget time for manual fixes on outliers — special editions, foreign titles, and ambiguous remakes.
+
+## Phase 5: Metadata validation
+
+Walk your poster grid once after first scan:
+
+- Wrong poster → fix folder year or manual match
+- Missing poster → check filename parsing
+- Duplicate entry → merge or remove extra file
+- Wrong type (TV vs movie) → move file to correct top-level folder
+
+Deep troubleshooting in [Movie Metadata Guide](/guides/movie-metadata-guide).
+
+## Phase 6: Subtitle organization
+
+Pair subtitle files with video using matching base names:
+
+- `Movie Title (2010).mkv`
+- `Movie Title (2010).en.srt`
+
+Verify pairs with the [Subtitle Checker](/tools/subtitle-checker). Missing subtitles are the most common playback complaint in organized libraries.
+
+## Phase 7: Ongoing maintenance
+
+Movie organizer work never fully ends — it becomes a ten-minute weekly habit:
+
+| Day | Action |
+| --- | --- |
+| Weekly | Ingest, rename, scan, fix metadata |
+| Monthly | Storage audit, duplicate purge |
+| Quarterly | Poster refresh, backlog review |
+
+Consistency beats perfection. Libraries maintained weekly stay organized for years.
+
+## Movie organizer vs manual folders
+
+Manual folders work until they do not. Signs you need a movie organizer app:
+
+- Search takes more than 30 seconds
+- Family members cannot find titles
+- Watch progress is lost between sessions
+- You avoid adding new downloads because cleanup feels overwhelming
+
+MyBinge is built as a movie organizer for Android — no server, no desktop dependency, poster browsing on TV.
+
+## Tool stack summary
+
+- [Movie Filename Formatter](/tools/movie-filename-formatter) — clean raw names
+- [Folder Structure Generator](/tools/folder-structure-generator) — template hierarchy
+- [Subtitle Checker](/tools/subtitle-checker) — verify caption pairs
+- [Metadata Finder](/tools/metadata-finder) — parse messy names for TMDB lookup
+- MyBinge — scan, match, browse, play
+
+Start with [How to Organize Downloaded Movies](/guides/how-to-organize-downloaded-movies) if you are migrating an existing messy library.

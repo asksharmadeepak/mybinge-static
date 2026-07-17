@@ -1,0 +1,56 @@
+---
+title: "Fixing Wrong Movie Posters in Your Offline Library"
+description: "Quick troubleshooting when metadata matching shows incorrect artwork or missing posters."
+date: "2026-07-07"
+category: "Troubleshooting"
+tags:
+  - movie metadata
+  - poster matching
+  - tmdb
+related:
+  - movie-metadata-guide
+  - how-to-organize-downloaded-movies
+---
+Wrong movie posters are the fastest way to lose trust in an offline library. You tap what looks like a family film and get something else entirely. Usually the file is fine — the metadata match is wrong.
+
+## Step 1: Check folder name and year
+
+Metadata engines parse **Movie Title (Year)** from folder or filename. Fix the folder first:
+
+- Wrong: `Spider-Man.mkv` in flat folder
+- Right: `Spider-Man (2002)/Spider-Man (2002).mkv`
+
+Remakes and same-title films need the year disambiguator. Rescan after rename.
+
+## Step 2: Use Metadata Finder before manual search
+
+Paste the raw filename into our [Metadata Finder](/tools/metadata-finder) tool. It extracts title, year, and generates a TMDB search link. Confirm the correct film before applying manual match in MyBinge.
+
+## Step 3: Manual match inside the app
+
+When automatic match fails:
+
+1. Open the title in MyBinge
+2. Search TMDB for correct entry
+3. Verify poster and year visually
+4. Save match
+5. Rename folder to prevent repeat on rescan
+
+## Step 4: Check file placement
+
+TV episodes in `Movies/` produce movie posters for TV content. Move to `TV Shows/Show Name/Season XX/` per [How to Organize TV Shows](/guides/how-to-organize-tv-shows).
+
+## Step 5: Special editions
+
+Director's cuts and extended editions may not exist separately on TMDB. Match theatrical release or closest edition, then add edition note to filename if needed.
+
+## Prevention checklist
+
+- Normalize every ingest with [Movie Filename Formatter](/tools/movie-filename-formatter)
+- Verify new titles within 24 hours of adding
+- Never bulk rename after metadata without rescan plan
+- Keep `_Inbox` for raw downloads — only clean names enter `Movies/`
+
+Deep dive: [Movie Metadata Guide](/guides/movie-metadata-guide)
+
+Wrong posters are fixable in minutes once naming is correct. Fix the name, fix the poster, move on.

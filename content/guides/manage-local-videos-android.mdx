@@ -1,0 +1,98 @@
+---
+title: "Manage Local Videos on Android"
+description: "How to store, access, and organize local videos on Android phones, SD cards, and USB drives."
+date: "2026-07-09"
+category: "Pillar Guide"
+tags:
+  - manage local videos
+  - android local video
+  - usb video storage
+related:
+  - video-library-app-guide
+  - movie-folder-structure-guide
+  - best-movie-collection-app-android
+faq:
+  - q: "Where should I store local videos on Android?"
+    a: "Internal storage for small libraries; SD card or USB OTG for larger collections."
+  - q: "Can Android apps read USB video drives?"
+    a: "Yes on supported devices with OTG adapters and proper folder permissions."
+  - q: "Do local videos use mobile data?"
+    a: "No. Local playback reads files directly from storage without streaming."
+  - q: "How do I grant folder access to a video app?"
+    a: "Use Android storage picker when adding folders in MyBinge; grant access to specific paths."
+  - q: "What formats play on Android locally?"
+    a: "MKV, MP4, and AVI are widely supported; codec inside container may vary by device."
+---
+Managing local videos on Android means choosing storage, granting permissions, organizing folders, and picking software that makes hundreds of files browsable. Whether your library lives on phone storage, a microSD card, or a portable USB drive, the same principles apply.
+
+This guide covers practical Android storage strategies for offline video libraries.
+
+## Storage options compared
+
+| Storage | Best for | Considerations |
+| --- | --- | --- |
+| Internal | Small libraries, always available | Limited space on budget phones |
+| microSD | Medium libraries, expandable | Speed varies by card class |
+| USB OTG | Large archives, TV setup | Requires adapter; grant permissions each mount sometimes |
+| Network paths | Shared household libraries | Needs stable LAN; more complex |
+
+Most serious collectors use USB drives for movies and internal storage for active downloads before ingest.
+
+## Granting folder access on Android
+
+Modern Android uses scoped storage. Video library apps request access through the system folder picker:
+
+1. Open MyBinge Settings
+2. Add media folder
+3. Navigate to Movies or library root in picker
+4. Confirm access
+
+For USB drives, connect OTG cable first, wait for mount notification, then pick drive root in the same flow. If scan finds zero files, verify the path includes video extensions (`.mkv`, `.mp4`, `.avi`).
+
+## Organizing local videos by type
+
+Separate content types at top level:
+
+- **Movies** — feature films, documentaries
+- **TV Shows** — episodic content
+- **Personal Videos** — family, travel, screen recordings
+
+Personal videos often use date-based names instead of TMDB-style titles. They may not auto-match posters — that is acceptable. Keep them in Personal Videos so they do not pollute movie metadata.
+
+## USB drive best practices
+
+- Use exFAT for drives shared with Windows/Mac
+- Keep identical folder structure on every drive
+- Safely eject before unplugging during scan
+- Label drives physically ("Movies 4TB", "TV Archive")
+- Avoid fragmented free space — copy in bulk, delete once
+
+Read [External Drive Tips for Android](/blog/external-drive-tips-android) for hardware notes.
+
+## Playback without internet
+
+Local video playback does not require connectivity once files are indexed. Metadata refresh and trailer loading may use internet optionally. Airplane mode should not block opening your catalog or resuming playback.
+
+## Local videos vs cloud streaming
+
+Cloud services optimize for licensing and bandwidth, not your file ownership. Local video management optimizes for control, offline access, and no subscription. The tradeoff is you maintain folder structure — guides and tools on this site exist to make that maintenance lightweight.
+
+## Codec and format notes
+
+Container format (MKV vs MP4) matters less than video codec (H.264, H.265). Most modern Android devices hardware-decode H.264 and H.265 in MKV. Edge cases may need VLC for exotic codecs while MyBinge handles daily catalog browsing.
+
+See [MKV vs MP4 for Offline Libraries](/blog/mkv-vs-mp4-offline-libraries).
+
+## Security and privacy
+
+Local videos never leave your device during playback. Sign-in syncs favorites and progress metadata — not video files. Your home recordings and personal clips stay on storage you control.
+
+## Recommended workflow
+
+1. Download or copy to `_Inbox`
+2. Rename with [Movie Filename Formatter](/tools/movie-filename-formatter)
+3. Move to structured folders per [Movie Folder Structure Guide](/guides/movie-folder-structure-guide)
+4. Scan in MyBinge
+5. Browse on Android TV
+
+Managing local videos on Android scales cleanly when storage choice and folder rules are decided upfront — not reinvented per file.

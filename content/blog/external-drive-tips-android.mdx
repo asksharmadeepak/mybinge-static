@@ -1,0 +1,63 @@
+---
+title: "External Drive Tips for Android Video Libraries"
+description: "Hardware, formatting, and permission tips for running large offline libraries from USB drives on Android."
+date: "2026-07-08"
+category: "Hardware"
+tags:
+  - usb storage
+  - android external drive
+  - offline library
+related:
+  - manage-local-videos-android
+  - offline-movie-library-blueprint
+---
+External USB drives are the most cost-effective way to store large offline movie libraries for Android TV. Phone storage fills fast; SD cards cap out; cloud streaming needs internet. A portable drive with the right setup gives terabytes of poster-browsable content from the couch.
+
+## Choose the right drive format
+
+**exFAT** is the practical default — readable on Windows, Mac, and Android without 4GB file limits of FAT32. Format new drives exFAT before copying your first movie.
+
+Avoid NTFS on Android unless your device explicitly supports read-write NTFS.
+
+## OTG adapters and Android TV
+
+Phones and many Android TV boxes need USB OTG adapters or powered USB hubs for 2.5" and 3.5" drives. Spinning drives often require external power — bus power alone may cause disconnects during scan.
+
+Test mount stability before copying a full library. A drive that disconnects mid-scan corrupts index state and wastes time.
+
+## Folder structure travels with the drive
+
+Use identical hierarchy on every drive:
+
+```
+Movies/
+TV Shows/
+Personal Videos/
+```
+
+When you swap drives, MyBinge recognizes the structure immediately. See [Movie Folder Structure Guide](/guides/movie-folder-structure-guide).
+
+## Grant persistent folder access
+
+Android scoped storage requires picking folders through the system picker. Add your drive root in MyBinge settings after each mount if permissions reset on some devices. Keep library paths shallow — grant `Movies` parent rather than individual title folders.
+
+## Safely eject
+
+Always unmount from Android settings before unplugging. Pulling a active drive during playback or scan risks filesystem corruption on exFAT volumes.
+
+## Size planning
+
+Estimate needs before buying: [Collection Planner](/tools/collection-planner). Rule of thumb at 1080p: ~8 GB per movie, ~2.5 GB per TV episode — adjust for x265 vs x264.
+
+## Backup strategy
+
+One drive is one failure point. Mirror critical folders to a second drive monthly. Your [offline movie library blueprint](/guides/offline-movie-library-blueprint) should name which drive is master vs backup.
+
+## Performance tips
+
+- Prefer SSD for frequently accessed active libraries
+- Use HDD for cold archive you browse less often
+- Defragment is rarely needed on exFAT; free space matters more
+- Keep 10% free space minimum for stable writes
+
+External drives plus MyBinge on Android TV deliver the closest experience to streaming — except you own every file on the shelf.

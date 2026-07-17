@@ -1,0 +1,153 @@
+---
+title: "Movie Folder Structure Guide"
+description: "The definitive folder structure for movies, TV shows, anime, and personal videos in an offline media library."
+date: "2026-07-11"
+category: "Pillar Guide"
+tags:
+  - movie folder structure
+  - folder organization
+  - offline media library
+related:
+  - offline-movie-library-blueprint
+  - how-to-organize-tv-shows
+  - movie-organizer-complete-guide
+faq:
+  - q: "What is the best folder structure for movies?"
+    a: "Library/Movies/Movie Title (Year)/ with the primary video file inside matching the folder name."
+  - q: "Should I use genre folders?"
+    a: "No. Keep flat movie folders and use app categories for genre filtering."
+  - q: "How should TV shows be structured?"
+    a: "TV Shows/Show Name/Season 01/S01E01.ext — see our TV organization guide."
+  - q: "Can I put anime in the TV Shows folder?"
+    a: "Either works if consistent. Many collectors use a dedicated Anime top-level folder."
+  - q: "How do I generate a folder template?"
+    a: "Use our Folder Structure Generator tool to create a customized hierarchy instantly."
+---
+Folder structure is the skeleton of your offline media library. Get it wrong and metadata breaks, search fails, and every new download creates debt. Get it right once and every movie organizer app — including MyBinge — works better forever.
+
+This guide defines the folder structure standards for movies, TV shows, anime, and personal videos on Android.
+
+## Core principles
+
+- **Shallow top level** — three to five root folders, not twenty
+- **One title per movie folder** — no flat dumps of hundreds of files
+- **Predictable names** — Movie Title (Year) everywhere
+- **Separation by type** — movies, TV, and personal video never mixed
+- **Genre in metadata, not paths** — avoid `Movies/Action/` trees
+
+## Standard library root
+
+```
+MyLibrary/
+├── Movies/
+├── TV Shows/
+├── Personal Videos/
+└── Anime/          (optional)
+```
+
+Generate your copy: [Folder Structure Generator](/tools/folder-structure-generator)
+
+## Movies folder structure
+
+Each movie gets its own folder:
+
+```
+Movies/
+├── Inception (2010)/
+│   └── Inception (2010) 1080p.mkv
+├── The Dark Knight (2008)/
+│   └── The Dark Knight (2008).mkv
+└── Interstellar (2014)/
+    ├── Interstellar (2014).mkv
+    └── Extras/
+        └── behind-the-scenes.mkv
+```
+
+Rules:
+
+- Folder name includes release year in parentheses
+- Primary file mirrors folder title
+- Quality tags after title: `1080p`, `x265`, `BluRay`
+- Extras subfolder for bonus content only
+
+## TV Shows folder structure
+
+```
+TV Shows/
+└── Breaking Bad/
+    ├── Season 01/
+    │   ├── Breaking Bad S01E01.mkv
+    │   └── Breaking Bad S01E02.mkv
+    └── Season 02/
+        └── ...
+```
+
+Episode naming patterns that parse well:
+
+- `Show Name S01E01.ext`
+- `Show Name - 1x01.ext`
+- `Show Name Season 01 Episode 01.ext`
+
+Full TV workflow: [How to Organize TV Shows](/guides/how-to-organize-tv-shows). Track progress with [Episode Tracker](/tools/episode-tracker).
+
+## Anime folder structure
+
+Option A — dedicated Anime root:
+
+```
+Anime/
+└── Attack on Titan/
+    └── Season 01/
+        └── Attack on Titan S01E01.mkv
+```
+
+Option B — under TV Shows with tag in app. Pick one convention and stay consistent.
+
+## Personal Videos folder structure
+
+```
+Personal Videos/
+├── Family/
+│   └── 2024-07 Birthday Party.mp4
+├── Travel/
+│   └── 2024 Iceland Trip/
+└── Tutorials/
+    └── editing-basics.mp4
+```
+
+Personal videos may not match TMDB. Flat descriptive names work better than Movie Title (Year) format.
+
+See [Manage Local Videos on Android](/guides/manage-local-videos-android).
+
+## What not to do
+
+- `Movies/Action/`, `Movies/Comedy/` genre trees
+- Single folder with 500 loose `.mkv` files
+- Mixing `.mp4` and `.mkv` duplicates in same folder without labels
+- Changing folder names after metadata matched without rescanning
+
+## Migrating an existing messy library
+
+1. Create `_Inbox` and move all files there
+2. Recreate clean empty Movies/TV/Personal structure
+3. Normalize and move one title at a time from Inbox
+4. Scan with MyBinge after each batch of 20–50 titles
+5. Fix metadata before moving next batch
+
+Migration is tedious once, painless forever. Use [How to Organize Downloaded Movies](/guides/how-to-organize-downloaded-movies) as your step-by-step checklist.
+
+## Storage sizing by structure
+
+| Collection size | Suggested layout |
+| --- | --- |
+| Under 100 titles | Single drive, flat Movies folder |
+| 100–500 titles | Dedicated drive, strict naming |
+| 500+ titles | External USB + weekly maintenance |
+
+Estimate space: [Collection Planner](/tools/collection-planner)
+
+## Folder structure and Android TV
+
+Android TV browsing assumes the same paths as phone. Keep library root identical across devices. Sign into MyBinge on both so poster grids and Continue Watching align.
+
+Your folder structure is a contract with your future self. Write it down, generate a template, and never improvise per download again.

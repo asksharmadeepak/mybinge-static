@@ -1,0 +1,60 @@
+---
+title: "MyBinge vs Jellyfin"
+description: "Compare MyBinge and Jellyfin for offline Android libraries — server complexity vs local-first simplicity."
+date: "2026-07-14"
+category: "Comparison"
+tags:
+  - mybinge vs jellyfin
+  - open source media server
+faq:
+  - q: "Is Jellyfin free?"
+    a: "Yes. Jellyfin is open-source and free, but requires server setup like Plex."
+  - q: "Can Jellyfin work without a server on Android?"
+    a: "Jellyfin is primarily a server-client model. MyBinge scans local Android folders directly without a server."
+  - q: "Which is better for USB drives on Android TV?"
+    a: "MyBinge connects directly to USB paths on supported Android TV devices."
+  - q: "Does Jellyfin support offline playback?"
+    a: "Offline requires sync or local server access; not the same as MyBinge's native offline-first design."
+  - q: "Can I self-host with MyBinge?"
+    a: "MyBinge is a local Android app, not a self-hosted server. Use Jellyfin if self-hosting is the primary goal."
+---
+Jellyfin is the leading open-source media server — free, self-hosted, and community-driven. MyBinge is a local Android movie collection app with no server component. Both index your files and show posters, but the operational model differs completely.
+
+## Overview
+
+**Jellyfin** runs on Linux, Windows, Docker, or NAS. Clients on Android, TV, and web connect to your server over the network. You control hosting, updates, and backups.
+
+**MyBinge** runs on the Android device where files live. Scan phone storage or USB, browse offline, sync progress when signed in. No Docker, no port 8096, no server uptime.
+
+## Feature comparison
+
+| Feature | MyBinge | Jellyfin |
+| --- | --- | --- |
+| Open source | App (commercial) | Server (OSS) |
+| Server required | No | Yes |
+| Android local USB | Direct | Via server path |
+| Offline on phone | Native | Network dependent |
+| Setup complexity | Low | Medium–High |
+| Self-hosting control | N/A | Full |
+| Transcoding | On-device | Server-side |
+| Plugins | Limited | Jellyfin plugin ecosystem |
+
+## MyBinge pros and cons
+
+**Pros:** Instant Android setup; true offline catalog; USB on TV; no server maintenance.
+
+**Cons:** No LAN streaming hub; no open-source server customization.
+
+## Jellyfin pros and cons
+
+**Pros:** Free OSS server; no vendor lock-in; LAN streaming to many clients; active community.
+
+**Cons:** Server setup and upkeep; Android offline needs planning; USB-on-TV requires server path mapping.
+
+## Which one should you choose?
+
+**MyBinge** for portable Android libraries and offline-first TV browsing.
+
+**Jellyfin** for homelab enthusiasts running 24/7 media servers.
+
+Many users organizing with [folder structure guides](/guides/movie-folder-structure-guide) can switch later — clean names help both systems.
