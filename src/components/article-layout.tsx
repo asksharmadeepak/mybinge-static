@@ -1,5 +1,7 @@
+import Link from "next/link";
 import { CtaStrip } from "@/components/cta-strip";
 import { Breadcrumbs } from "@/components/breadcrumbs";
+import { GooglePlayBadge } from "@/components/google-play-badge";
 import type { ContentItem } from "@/types/content";
 
 function renderInline(text: string) {
@@ -146,6 +148,15 @@ export function ArticleLayout({
       <p className="mt-5 text-lg leading-relaxed text-[#c4c4c4]">{item.description}</p>
       <div className="mt-4 text-sm text-[#9a9a9a]">
         {new Date(item.date).toLocaleDateString()} · {item.readingTime}
+      </div>
+      <div className="mt-8 flex flex-wrap items-center gap-4 rounded-2xl border border-white/[0.08] bg-[#141414] px-5 py-4">
+        <GooglePlayBadge height={44} placement="guide_header" />
+        <Link
+          href="/download"
+          className="text-sm font-medium text-white underline-offset-2 hover:underline"
+        >
+          Download MyBinge for Android
+        </Link>
       </div>
       <div className="mt-10">{renderBody(item.body)}</div>
       {item.faq?.length ? (

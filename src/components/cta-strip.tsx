@@ -12,12 +12,12 @@ export function CtaStrip() {
         history, and cross-device continuity.
       </p>
       <div className="mt-8 flex flex-wrap items-center gap-4">
-        <GooglePlayBadge height={48} trackEvent="download_cta_click" />
+        <GooglePlayBadge height={48} placement="cta_strip" />
         <Link
-          href="/guides"
+          href="/download"
           className="rounded-full border border-white/20 px-5 py-2.5 text-sm font-medium text-white transition hover:border-white/40 hover:bg-white/[0.04]"
         >
-          Explore Guides
+          Download page
         </Link>
       </div>
     </div>

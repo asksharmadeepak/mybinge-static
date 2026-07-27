@@ -99,7 +99,7 @@ export function DownloadShowcase() {
             <li>• Optional YouTube favorites (internet for those only)</li>
           </ul>
           <div className="mt-8">
-            <GooglePlayBadge height={56} trackEvent="download_cta_click" />
+            <GooglePlayBadge height={56} placement="download_page" />
           </div>
           <p className="mt-5 text-sm text-[#9a9a9a]">
             New to organizing files?{" "}
@@ -155,7 +155,7 @@ export function DownloadShowcase() {
           Free on Google Play. Works offline for your local files — no subscription required.
         </p>
         <div className="mt-8 flex justify-center">
-          <GooglePlayBadge height={52} trackEvent="download_cta_click" />
+          <GooglePlayBadge height={52} placement="download_page_bottom" />
         </div>
       </section>
     </div>

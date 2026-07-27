@@ -76,6 +76,20 @@ export default function HomePage() {
             </li>
           ))}
         </ol>
+        <p className="mt-8 text-sm text-[#9a9a9a]">
+          Need the full system? Read{" "}
+          <Link
+            href="/guides/how-to-organize-downloaded-movies"
+            className="text-white underline-offset-2 hover:underline"
+          >
+            how to organize downloaded movies
+          </Link>
+          , then{" "}
+          <Link href="/download" className="text-white underline-offset-2 hover:underline">
+            download MyBinge
+          </Link>
+          .
+        </p>
       </Section>
 
       <Section title="Frequently asked questions">

@@ -6,8 +6,8 @@ const hubCards = [
     Icon: BookOpen,
     title: "Expert Guides",
     description: "Step-by-step guides to organize your media like a pro.",
-    href: "/guides",
-    cta: "Explore Guides",
+    href: "/guides/how-to-organize-downloaded-movies",
+    cta: "Organize downloaded movies",
   },
   {
     Icon: Scale,
