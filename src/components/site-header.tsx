@@ -1,6 +1,14 @@
+"use client";
+
 import Link from "next/link";
 import { BrandLogo } from "@/components/brand-logo";
 import { siteConfig } from "@/lib/site";
+
+declare global {
+  interface Window {
+    gtag?: (...args: unknown[]) => void;
+  }
+}
 
 export function SiteHeader() {
   return (
@@ -19,8 +27,19 @@ export function SiteHeader() {
           ))}
         </nav>
         <Link
-          href={siteConfig.downloadNav.href}
+          href={siteConfig.playStoreUrl}
+          target="_blank"
+          rel="noopener noreferrer"
           className="rounded-full bg-[#E50914] px-5 py-2.5 text-sm font-semibold text-white transition hover:bg-[#c40812]"
+          onClick={() => {
+            window.gtag?.("event", "download_cta_click", {
+              event_category: "download",
+              link_url: siteConfig.playStoreUrl,
+              destination: siteConfig.playStoreUrl,
+              placement: "header",
+              page_path: window.location.pathname,
+            });
+          }}
         >
           {siteConfig.downloadNav.label}
         </Link>

@@ -17,27 +17,50 @@ type GooglePlayBadgeProps = {
   trackEvent?: string;
   /** Where the badge sits: hero | cta_strip | guide_header | download_page | … */
   placement?: string;
+  /** Official badge image, or a red text button */
+  variant?: "badge" | "button";
+  children?: React.ReactNode;
 };
+
+function trackDownload(trackEvent: string, placement: string) {
+  window.gtag?.("event", trackEvent, {
+    event_category: "download",
+    link_url: siteConfig.playStoreUrl,
+    destination: siteConfig.playStoreUrl,
+    placement,
+    page_path: window.location.pathname,
+  });
+}
 
 export function GooglePlayBadge({
   className = "",
   height = 48,
   trackEvent = "download_cta_click",
   placement = "unknown",
+  variant = "badge",
+  children,
 }: GooglePlayBadgeProps) {
+  if (variant === "button") {
+    return (
+      <Link
+        href={siteConfig.playStoreUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={`inline-flex items-center justify-center rounded-full bg-[#E50914] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#c40812] ${className}`}
+        onClick={() => trackDownload(trackEvent, placement)}
+      >
+        {children ?? "Download on Google Play"}
+      </Link>
+    );
+  }
+
   return (
     <Link
       href={siteConfig.playStoreUrl}
+      target="_blank"
+      rel="noopener noreferrer"
       className={`inline-block opacity-90 transition hover:opacity-100 ${className}`}
-      onClick={() => {
-        window.gtag?.("event", trackEvent, {
-          event_category: "download",
-          link_url: siteConfig.playStoreUrl,
-          destination: siteConfig.playStoreUrl,
-          placement,
-          page_path: window.location.pathname,
-        });
-      }}
+      onClick={() => trackDownload(trackEvent, placement)}
     >
       <Image
         src={siteConfig.assets.googlePlayBadge}

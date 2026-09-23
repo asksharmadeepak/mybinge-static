@@ -50,7 +50,7 @@ export const siteConfig = {
     { href: "/tools", label: "Tools" },
     { href: "/blog", label: "Blog" },
   ],
-  downloadNav: { href: "/download", label: "Download App" },
+  downloadNav: { href: "/download", label: "Download on Google Play" },
 } as const;
 
 export type NavItem = (typeof siteConfig.nav)[number];

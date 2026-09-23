@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { CtaStrip } from "@/components/cta-strip";
 import { Breadcrumbs } from "@/components/breadcrumbs";
 import { GooglePlayBadge } from "@/components/google-play-badge";
@@ -150,13 +149,8 @@ export function ArticleLayout({
         {new Date(item.date).toLocaleDateString()} · {item.readingTime}
       </div>
       <div className="mt-8 flex flex-wrap items-center gap-4 rounded-2xl border border-white/[0.08] bg-[#141414] px-5 py-4">
-        <GooglePlayBadge height={44} placement="guide_header" />
-        <Link
-          href="/download"
-          className="text-sm font-medium text-white underline-offset-2 hover:underline"
-        >
-          Download MyBinge for Android
-        </Link>
+        <GooglePlayBadge variant="button" placement="guide_header" className="px-5 py-2.5" />
+        <GooglePlayBadge height={44} placement="guide_header_badge" />
       </div>
       <div className="mt-10">{renderBody(item.body)}</div>
       {item.faq?.length ? (

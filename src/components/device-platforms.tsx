@@ -1,6 +1,6 @@
 import Image from "next/image";
-import Link from "next/link";
 import { Smartphone, Tablet, Tv, Check } from "lucide-react";
+import { GooglePlayBadge } from "@/components/google-play-badge";
 import { siteConfig } from "@/lib/site";
 
 const devices = [
@@ -116,7 +116,7 @@ export function DevicePlatforms() {
               </ul>
               {device.id === "tablet" ? (
                 <p className="mt-4 text-xs text-[#9a9a9a]">
-                  Dedicated tablet screenshot coming soon — layout uses the same library as phone and TV.
+                  Same library experience as phone — add folders once and browse on a larger screen.
                 </p>
               ) : null}
             </div>
@@ -147,12 +147,10 @@ export function DevicePlatforms() {
         <p className="text-[#c4c4c4]">
           Organize once. Watch anywhere you have Android — phone, tablet, or TV.
         </p>
-        <Link
-          href="/download"
-          className="mt-5 inline-flex rounded-full bg-[#E50914] px-6 py-2.5 text-sm font-semibold text-white transition hover:bg-[#c40812]"
-        >
-          Download MyBinge
-        </Link>
+        <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
+          <GooglePlayBadge variant="button" placement="features_devices" />
+          <GooglePlayBadge height={48} placement="features_devices_badge" />
+        </div>
       </div>
     </div>
   );

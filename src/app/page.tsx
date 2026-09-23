@@ -6,6 +6,7 @@ import { CtaStrip } from "@/components/cta-strip";
 import { Section } from "@/components/section";
 import { buildMetadata, breadcrumbJsonLd, faqPageJsonLd } from "@/lib/seo";
 import { faqItems, featureList, homeFaqItems, homeSeoSections } from "@/lib/marketing";
+import { siteConfig } from "@/lib/site";
 
 export const metadata = buildMetadata({
   title: "Build Your Own Offline Media Library",
@@ -85,9 +86,14 @@ export default function HomePage() {
             how to organize downloaded movies
           </Link>
           , then{" "}
-          <Link href="/download" className="text-white underline-offset-2 hover:underline">
-            download MyBinge
-          </Link>
+          <a
+            href={siteConfig.playStoreUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white underline-offset-2 hover:underline"
+          >
+            download MyBinge on Google Play
+          </a>
           .
         </p>
       </Section>

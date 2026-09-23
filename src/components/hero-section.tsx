@@ -24,15 +24,19 @@ export function HeroSection() {
             library.
           </p>
           <div className="mt-10 flex flex-wrap items-center gap-4">
-            <GooglePlayBadge height={52} placement="hero" />
+            <GooglePlayBadge variant="button" placement="hero" />
+            <GooglePlayBadge height={52} placement="hero_badge" />
+          </div>
+          <p className="mt-5 text-sm text-[#9a9a9a]">
+            New to organizing?{" "}
             <Link
               href="/guides/how-to-organize-downloaded-movies"
-              className="inline-flex items-center rounded-full border border-white/20 px-6 py-3.5 text-sm font-medium text-white transition hover:border-white/40 hover:bg-white/[0.04]"
+              className="text-white underline-offset-2 hover:underline"
             >
               How to organize movies
             </Link>
-          </div>
-          <p className="mt-8 flex items-center gap-2 text-sm text-[#9a9a9a]">
+          </p>
+          <p className="mt-6 flex items-center gap-2 text-sm text-[#9a9a9a]">
             <ShieldCheck className="h-4 w-4 shrink-0 text-white/50" aria-hidden />
             100% Offline · Private · Secure
           </p>

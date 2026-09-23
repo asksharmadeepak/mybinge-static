@@ -98,8 +98,9 @@ export function DownloadShowcase() {
             <li>• Movies on TV; manage & search on phone</li>
             <li>• Optional YouTube favorites (internet for those only)</li>
           </ul>
-          <div className="mt-8">
-            <GooglePlayBadge height={56} placement="download_page" />
+          <div className="mt-8 flex flex-wrap items-center gap-4">
+            <GooglePlayBadge variant="button" placement="download_page" />
+            <GooglePlayBadge height={56} placement="download_page_badge" />
           </div>
           <p className="mt-5 text-sm text-[#9a9a9a]">
             New to organizing files?{" "}
