@@ -24,15 +24,18 @@ export default function FeaturesPage() {
       <DevicePlatforms />
 
       <section className="mt-20">
-        <h2 className="text-2xl font-semibold tracking-tight text-white">Everything in the library</h2>
+        <h2 className="font-heading text-3xl text-white">Everything in the library</h2>
         <p className="mt-3 text-[#c4c4c4]">
           Core capabilities that keep your personal Netflix-like offline experience tidy on every device.
         </p>
-        <div className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-8 flex flex-wrap gap-2">
           {featureList.map((feature) => (
-            <div key={feature} className="rounded-xl border border-white/[0.08] bg-[#141414] px-4 py-3.5 text-sm text-[#e8e8e8]">
+            <span
+              key={feature}
+              className="rounded-full border border-white/[0.06] bg-[#101010] px-4 py-2 text-sm text-[#e8e8e8]"
+            >
               {feature}
-            </div>
+            </span>
           ))}
         </div>
       </section>

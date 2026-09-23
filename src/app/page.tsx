@@ -1,9 +1,11 @@
 import Link from "next/link";
 import { HeroSection } from "@/components/hero-section";
-import { FeatureHighlights } from "@/components/feature-highlights";
+import { OutcomeRow } from "@/components/outcome-row";
+import { ProductStage } from "@/components/product-stage";
 import { ContentHubCards } from "@/components/content-hub-cards";
 import { CtaStrip } from "@/components/cta-strip";
 import { Section } from "@/components/section";
+import { FaqAccordion } from "@/components/faq-accordion";
 import { buildMetadata, breadcrumbJsonLd, faqPageJsonLd } from "@/lib/seo";
 import { faqItems, featureList, homeFaqItems, homeSeoSections } from "@/lib/marketing";
 import { siteConfig } from "@/lib/site";
@@ -17,72 +19,39 @@ export const metadata = buildMetadata({
 
 const homeBreadcrumbs = breadcrumbJsonLd([{ name: "Home", path: "/" }]);
 
+const steps = [
+  { title: "Import", body: "Add local folders and external drives from Settings." },
+  { title: "Match", body: "Normalize filenames and pull posters from metadata." },
+  { title: "Watch", body: "Browse by posters, categories, and Continue Watching." },
+];
+
 export default function HomePage() {
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqPageJsonLd(homeFaqItems)) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(homeBreadcrumbs) }} />
       <HeroSection />
-      <FeatureHighlights />
+      <OutcomeRow />
+      <ProductStage />
       <ContentHubCards />
 
-      {homeSeoSections.map((block) => (
-        <Section key={block.title} title={block.title}>
-          <div className="space-y-5 text-[#c4c4c4]">
-            {block.paragraphs.map((paragraph) => (
-              <p key={paragraph.slice(0, 40)} className="leading-relaxed">
-                {paragraph}
-              </p>
-            ))}
-          </div>
-        </Section>
-      ))}
-
       <Section
-        title="Why organize your offline media library?"
-        subtitle="When folders become messy, discovering the right title takes longer than watching it."
+        eyebrow="How it works"
+        title="Three steps that scale."
+        subtitle="A practical process from a few downloads to thousands of files."
       >
-        <div className="grid gap-5 md:grid-cols-3">
-          {["Faster discovery", "Cleaner watch history", "Better metadata"].map((item) => (
-            <div key={item} className="rounded-2xl border border-white/[0.08] bg-[#141414] p-6">
-              <h3 className="font-semibold text-white">{item}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-[#c4c4c4]">
-                Build a system where filenames, folders, artwork, and playback state are easy to understand for every family member.
-              </p>
-            </div>
-          ))}
-        </div>
-      </Section>
-
-      <Section title="MyBinge features" subtitle="Everything you need to build a personal Netflix-like offline experience.">
-        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
-          {featureList.map((feature) => (
-            <div key={feature} className="rounded-xl border border-white/[0.08] bg-[#141414] px-4 py-3.5 text-sm text-[#e8e8e8]">
-              {feature}
-            </div>
-          ))}
-        </div>
-      </Section>
-
-      <Section title="How it works" subtitle="A practical process that scales from a few downloads to thousands of files.">
-        <ol className="grid gap-5 md:grid-cols-3">
-          {[
-            "Import local folders and external drives.",
-            "Normalize filenames and match metadata.",
-            "Browse by posters, categories, and watch progress.",
-          ].map((step, index) => (
-            <li key={step} className="rounded-2xl border border-white/[0.08] bg-[#141414] p-6">
-              <p className="text-xs font-medium uppercase tracking-wider text-[#9a9a9a]">Step {index + 1}</p>
-              <p className="mt-3 text-white">{step}</p>
+        <ol className="grid gap-8 md:grid-cols-3 md:gap-10">
+          {steps.map((step, index) => (
+            <li key={step.title} className="border-t border-white/[0.06] pt-6">
+              <p className="text-xs tracking-[0.16em] text-[#8a8a8a]">0{index + 1}</p>
+              <h3 className="mt-3 font-heading text-2xl text-white">{step.title}</h3>
+              <p className="mt-3 text-sm leading-relaxed text-[#c4c4c4]">{step.body}</p>
             </li>
           ))}
         </ol>
-        <p className="mt-8 text-sm text-[#9a9a9a]">
+        <p className="mt-10 text-sm text-[#8a8a8a]">
           Need the full system? Read{" "}
-          <Link
-            href="/guides/how-to-organize-downloaded-movies"
-            className="text-white underline-offset-2 hover:underline"
-          >
+          <Link href="/guides/how-to-organize-downloaded-movies" className="text-white underline-offset-4 hover:underline">
             how to organize downloaded movies
           </Link>
           , then{" "}
@@ -90,26 +59,54 @@ export default function HomePage() {
             href={siteConfig.playStoreUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-white underline-offset-2 hover:underline"
+            className="text-white underline-offset-4 hover:underline"
           >
-            download MyBinge on Google Play
+            get MyBinge on Google Play
           </a>
           .
         </p>
       </Section>
 
-      <Section title="Frequently asked questions">
-        <div className="space-y-4">
-          {homeFaqItems.map((faq) => (
-            <div key={faq.q} className="rounded-2xl border border-white/[0.08] bg-[#141414] p-6">
-              <h3 className="font-medium text-white">{faq.q}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-[#c4c4c4]">{faq.a}</p>
-            </div>
+      <section className="mx-auto w-full max-w-7xl px-4 py-16 md:px-8 md:py-24">
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#8a8a8a]">In the library</p>
+        <h2 className="mt-3 font-heading text-3xl text-white md:text-5xl">What you get</h2>
+        <div className="mt-10 flex flex-wrap gap-2">
+          {featureList.map((feature) => (
+            <span
+              key={feature}
+              className="rounded-full border border-white/[0.06] bg-[#101010] px-4 py-2 text-sm text-[#e8e8e8]"
+            >
+              {feature}
+            </span>
           ))}
         </div>
-        <p className="mt-8 text-sm text-[#9a9a9a]">
-          {faqItems.length - homeFaqItems.length} more answers on our{" "}
-          <Link href="/faq" className="text-white underline-offset-2 hover:underline">
+      </section>
+
+      <section className="mx-auto w-full max-w-7xl px-4 py-16 md:px-8 md:py-24">
+        <div className="max-w-2xl">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#8a8a8a]">Field notes</p>
+          <div className="mt-8 space-y-16">
+            {homeSeoSections.map((block) => (
+              <article key={block.title}>
+                <h2 className="font-heading text-3xl leading-tight text-white md:text-4xl">{block.title}</h2>
+                <div className="mt-6 space-y-5 text-[#c4c4c4]">
+                  {block.paragraphs.map((paragraph) => (
+                    <p key={paragraph.slice(0, 40)} className="leading-relaxed">
+                      {paragraph}
+                    </p>
+                  ))}
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <Section eyebrow="FAQ" title="Questions, answered.">
+        <FaqAccordion items={homeFaqItems} />
+        <p className="mt-8 text-sm text-[#8a8a8a]">
+          {faqItems.length - homeFaqItems.length} more on the{" "}
+          <Link href="/faq" className="text-white underline-offset-4 hover:underline">
             full FAQ page
           </Link>
           .

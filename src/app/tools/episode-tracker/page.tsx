@@ -71,11 +71,11 @@ export default function EpisodeTrackerPage() {
 
   return (
     <div className="mx-auto w-full max-w-4xl px-4 py-12 md:px-8 md:py-16">
-      <h1 className="text-4xl font-semibold text-white">Episode Tracker</h1>
+      <h1 className="font-heading text-4xl text-white md:text-5xl">Episode Tracker</h1>
       <p className="mt-3 text-[#c4c4c4]">
         Checklist grid for TV seasons — track which episodes you have downloaded. Saved in browser local storage.
       </p>
-      <div className="mt-8 rounded-2xl border border-white/[0.08] bg-[#141414] p-6">
+      <div className="mt-8 rounded-2xl border border-white/[0.06] bg-[#101010] p-6">
         <div className="grid gap-4 sm:grid-cols-3">
           <div>
             <label className="mb-2 block text-sm text-[#c4c4c4]" htmlFor="show-name">
@@ -86,7 +86,7 @@ export default function EpisodeTrackerPage() {
               value={showName}
               onChange={(e) => setShowName(e.target.value)}
               onBlur={saveConfig}
-              className="w-full rounded-xl border border-white/20 bg-[#090909] px-4 py-3 text-white"
+              className="w-full rounded-xl border border-white/20 bg-[#070707] px-4 py-3 text-white"
             />
           </div>
           <div>
@@ -101,7 +101,7 @@ export default function EpisodeTrackerPage() {
               value={seasons}
               onChange={(e) => setSeasons(Number(e.target.value))}
               onBlur={saveConfig}
-              className="w-full rounded-xl border border-white/20 bg-[#090909] px-4 py-3 text-white"
+              className="w-full rounded-xl border border-white/20 bg-[#070707] px-4 py-3 text-white"
             />
           </div>
           <div>
@@ -116,7 +116,7 @@ export default function EpisodeTrackerPage() {
               value={episodesPerSeason}
               onChange={(e) => setEpisodesPerSeason(Number(e.target.value))}
               onBlur={saveConfig}
-              className="w-full rounded-xl border border-white/20 bg-[#090909] px-4 py-3 text-white"
+              className="w-full rounded-xl border border-white/20 bg-[#070707] px-4 py-3 text-white"
             />
           </div>
         </div>
@@ -139,7 +139,7 @@ export default function EpisodeTrackerPage() {
                       className={`rounded-lg px-3 py-2 text-xs font-medium transition ${
                         isChecked
                           ? "bg-[#E50914] text-white"
-                          : "border border-white/20 bg-[#090909] text-[#c4c4c4] hover:border-white/40"
+                          : "border border-white/20 bg-[#070707] text-[#c4c4c4] hover:border-white/40"
                       }`}
                     >
                       E{String(ep).padStart(2, "0")}

@@ -38,11 +38,11 @@ export default function MetadataFinderPage() {
 
   return (
     <div className="mx-auto w-full max-w-4xl px-4 py-12 md:px-8 md:py-16">
-      <h1 className="text-4xl font-semibold text-white">Metadata Finder</h1>
+      <h1 className="font-heading text-4xl text-white md:text-5xl">Metadata Finder</h1>
       <p className="mt-3 text-[#c4c4c4]">
         Parse a messy movie filename into a clean title, year, and TMDB search link for metadata matching.
       </p>
-      <div className="mt-8 rounded-2xl border border-white/[0.08] bg-[#141414] p-6">
+      <div className="mt-8 rounded-2xl border border-white/[0.06] bg-[#101010] p-6">
         <label htmlFor="metadata-input" className="mb-2 block text-sm text-[#c4c4c4]">
           Raw filename
         </label>
@@ -51,7 +51,7 @@ export default function MetadataFinderPage() {
           value={input}
           onChange={(e) => setInput(e.target.value)}
           placeholder="e.g. interstellar.2014.1080p.bluray.x264-GROUP.mkv"
-          className="w-full rounded-xl border border-white/20 bg-[#090909] px-4 py-3 text-white"
+          className="w-full rounded-xl border border-white/20 bg-[#070707] px-4 py-3 text-white"
         />
         {parsed && (
           <dl className="mt-6 space-y-4">
@@ -69,7 +69,7 @@ export default function MetadataFinderPage() {
             </div>
             <div>
               <dt className="text-sm text-[#c4c4c4]">Suggested folder name</dt>
-              <dd className="mt-1 rounded-xl border border-white/10 bg-[#090909] px-4 py-3 font-mono text-white">
+              <dd className="mt-1 rounded-xl border border-white/10 bg-[#070707] px-4 py-3 font-mono text-white">
                 {parsed.year ? `${parsed.title} (${parsed.year})` : parsed.title}
               </dd>
             </div>

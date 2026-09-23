@@ -14,20 +14,24 @@ export default function GuidesPage() {
   const guides = getContentByKind("guides");
   return (
     <div className="mx-auto w-full max-w-6xl px-4 py-14 md:px-8 md:py-20">
-      <h1 className="text-4xl font-semibold tracking-tight text-white md:text-5xl">Guides</h1>
+      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#8a8a8a]">Learn</p>
+      <h1 className="mt-3 font-heading text-4xl text-white md:text-6xl">Guides</h1>
       <p className="mt-5 max-w-3xl text-lg leading-relaxed text-[#c4c4c4]">
         Deep, practical tutorials designed to help you build a durable offline media library.
       </p>
-      <div className="mt-10 grid gap-5 md:grid-cols-2">
-        {guides.map((guide) => (
+      <div className="mt-12 divide-y divide-white/[0.06] border-y border-white/[0.06]">
+        {guides.map((guide, index) => (
           <Link
             key={guide.slug}
             href={`/guides/${guide.slug}`}
-            className="rounded-2xl border border-white/[0.08] bg-[#141414] p-6 transition hover:border-white/20"
+            className="group grid gap-2 py-7 md:grid-cols-[72px_1fr_auto] md:items-baseline"
           >
-            <h2 className="text-xl font-medium text-white">{guide.title}</h2>
-            <p className="mt-3 text-sm leading-relaxed text-[#c4c4c4]">{guide.description}</p>
-            <p className="mt-4 text-xs text-[#9a9a9a]">{guide.readingTime}</p>
+            <span className="text-xs text-[#8a8a8a]">{String(index + 1).padStart(2, "0")}</span>
+            <span>
+              <span className="font-heading text-2xl text-white md:text-3xl">{guide.title}</span>
+              <span className="mt-2 block text-sm leading-relaxed text-[#c4c4c4]">{guide.description}</span>
+            </span>
+            <span className="text-xs text-[#8a8a8a]">{guide.readingTime}</span>
           </Link>
         ))}
       </div>

@@ -1,13 +1,13 @@
-/* Brand design tokens — red is for CTAs & sparse accents only. */
+/* Cinematic dark system — red for primary CTAs only. */
 :root {
   --brand-primary: #e50914;
-  --brand-primary-hover: #ff4040;
-  --brand-background: #090909;
-  --brand-surface: #141414;
-  --brand-surface-elevated: #1a1a1a;
-  --brand-border: rgba(255, 255, 255, 0.08);
+  --brand-primary-hover: #c40812;
+  --brand-background: #070707;
+  --brand-surface: #101010;
+  --brand-surface-elevated: #161616;
+  --brand-border: rgba(255, 255, 255, 0.06);
   --brand-text: #ffffff;
   --brand-text-secondary: #c4c4c4;
-  --brand-text-muted: #9a9a9a;
-  --brand-glow: rgba(229, 9, 20, 0.12);
+  --brand-text-muted: #8a8a8a;
+  --brand-glow: rgba(229, 9, 20, 0.1);
 }

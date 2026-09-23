@@ -1,6 +1,7 @@
 import { CtaStrip } from "@/components/cta-strip";
 import { Breadcrumbs } from "@/components/breadcrumbs";
-import { GooglePlayBadge } from "@/components/google-play-badge";
+import { StoreCta } from "@/components/store-cta";
+import { FaqAccordion } from "@/components/faq-accordion";
 import type { ContentItem } from "@/types/content";
 
 function renderInline(text: string) {
@@ -24,7 +25,7 @@ function renderBlock(block: string, index: number) {
 
   if (trimmed.startsWith("## ")) {
     return (
-      <h2 key={index} className="mb-4 mt-10 text-2xl font-semibold text-white">
+      <h2 key={index} className="mb-4 mt-12 font-heading text-3xl text-white">
         {trimmed.slice(3)}
       </h2>
     );
@@ -55,9 +56,9 @@ function renderBlock(block: string, index: number) {
     const header = parseRow(rows[0]);
     const bodyRows = rows.slice(2).map(parseRow);
     return (
-      <div key={index} className="mb-6 overflow-x-auto rounded-xl border border-white/[0.08]">
+      <div key={index} className="mb-6 overflow-x-auto rounded-xl border border-white/[0.06]">
         <table className="w-full min-w-[480px] text-left text-sm">
-          <thead className="bg-[#141414]">
+          <thead className="bg-[#101010]">
             <tr>
               {header.map((cell) => (
                 <th key={cell} className="border-b border-white/[0.08] px-4 py-3 font-medium text-white">
@@ -143,26 +144,20 @@ export function ArticleLayout({
       ) : null}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <Breadcrumbs items={breadcrumbs} />
-      <h1 className="mt-2 text-4xl font-semibold tracking-tight text-white md:text-5xl">{item.title}</h1>
+      <h1 className="mt-3 font-heading text-4xl leading-tight tracking-tight text-white md:text-5xl">{item.title}</h1>
       <p className="mt-5 text-lg leading-relaxed text-[#c4c4c4]">{item.description}</p>
-      <div className="mt-4 text-sm text-[#9a9a9a]">
+      <div className="mt-4 text-sm text-[#8a8a8a]">
         {new Date(item.date).toLocaleDateString()} · {item.readingTime}
       </div>
-      <div className="mt-8 flex flex-wrap items-center gap-4 rounded-2xl border border-white/[0.08] bg-[#141414] px-5 py-4">
-        <GooglePlayBadge variant="button" placement="guide_header" className="px-5 py-2.5" />
-        <GooglePlayBadge height={44} placement="guide_header_badge" />
+      <div className="mt-8">
+        <StoreCta placement="guide_header" />
       </div>
       <div className="mt-10">{renderBody(item.body)}</div>
       {item.faq?.length ? (
         <section className="mt-14">
-          <h2 className="text-2xl font-semibold tracking-tight text-white">FAQ</h2>
-          <div className="mt-6 space-y-4">
-            {item.faq.map((faq) => (
-              <div key={faq.q} className="rounded-2xl border border-white/[0.08] bg-[#141414] p-6">
-                <h3 className="font-medium text-white">{faq.q}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-[#c4c4c4]">{faq.a}</p>
-              </div>
-            ))}
+          <h2 className="font-heading text-3xl text-white">FAQ</h2>
+          <div className="mt-6">
+            <FaqAccordion items={item.faq} />
           </div>
         </section>
       ) : null}
@@ -171,7 +166,7 @@ export function ArticleLayout({
       </section>
       {related.length ? (
         <section className="mt-14">
-          <h2 className="text-2xl font-semibold tracking-tight text-white">Related reading</h2>
+          <h2 className="font-heading text-3xl text-white">Related reading</h2>
           <ul className="mt-5 space-y-3">
             {related.map((entry) => (
               <li key={entry.href}>

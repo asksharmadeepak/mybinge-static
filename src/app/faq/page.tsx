@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { SimplePage } from "@/components/simple-page";
+import { FaqAccordion } from "@/components/faq-accordion";
 import { buildMetadata, faqPageJsonLd } from "@/lib/seo";
 import { faqItems } from "@/lib/marketing";
 
@@ -35,12 +36,7 @@ export default function FaqPage() {
           </Link>{" "}
           for deeper walkthroughs.
         </p>
-        {faqItems.map((faq) => (
-          <div key={faq.q} className="rounded-2xl border border-white/[0.08] bg-[#141414] p-6">
-            <h2 className="text-xl font-medium text-white">{faq.q}</h2>
-            <p className="mt-3 leading-relaxed text-[#c4c4c4]">{faq.a}</p>
-          </div>
-        ))}
+        <FaqAccordion items={faqItems} />
       </SimplePage>
     </>
   );

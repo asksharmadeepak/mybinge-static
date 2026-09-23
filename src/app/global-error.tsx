@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function GlobalError({ reset }: { error: Error; reset: () => void }) {
   return (
     <html lang="en">
-      <body className="bg-[#090909] text-white">
+      <body className="bg-[#070707] text-white">
         <div className="mx-auto flex min-h-screen w-full max-w-4xl flex-col items-center justify-center px-4 text-center">
           <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#9a9a9a]">500</p>
           <h1 className="mt-4 text-4xl font-semibold tracking-tight">Something went wrong</h1>

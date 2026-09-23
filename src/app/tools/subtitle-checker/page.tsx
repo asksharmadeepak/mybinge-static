@@ -51,11 +51,11 @@ export default function SubtitleCheckerPage() {
 
   return (
     <div className="mx-auto w-full max-w-4xl px-4 py-12 md:px-8 md:py-16">
-      <h1 className="text-4xl font-semibold text-white">Subtitle Checker</h1>
+      <h1 className="font-heading text-4xl text-white md:text-5xl">Subtitle Checker</h1>
       <p className="mt-3 text-[#c4c4c4]">
         Paste video and subtitle filenames (one per line) to find missing caption pairs in your library.
       </p>
-      <div className="mt-8 rounded-2xl border border-white/[0.08] bg-[#141414] p-6">
+      <div className="mt-8 rounded-2xl border border-white/[0.06] bg-[#101010] p-6">
         <label htmlFor="subtitle-input" className="mb-2 block text-sm text-[#c4c4c4]">
           Filenames (from folder listing or file manager export)
         </label>
@@ -65,7 +65,7 @@ export default function SubtitleCheckerPage() {
           onChange={(e) => setInput(e.target.value)}
           rows={10}
           placeholder={"Inception (2010).mkv\nInception (2010).en.srt\nInterstellar (2014).mkv"}
-          className="w-full rounded-xl border border-white/20 bg-[#090909] px-4 py-3 font-mono text-sm text-white"
+          className="w-full rounded-xl border border-white/20 bg-[#070707] px-4 py-3 font-mono text-sm text-white"
         />
         {results.length > 0 && (
           <p className="mt-4 text-sm text-[#c4c4c4]">

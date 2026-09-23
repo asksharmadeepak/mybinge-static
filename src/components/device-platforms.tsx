@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Smartphone, Tablet, Tv, Check } from "lucide-react";
-import { GooglePlayBadge } from "@/components/google-play-badge";
+import { StoreCta } from "@/components/store-cta";
 import { siteConfig } from "@/lib/site";
 
 const devices = [
@@ -65,12 +65,12 @@ export function DevicePlatforms() {
   return (
     <div className="space-y-16">
       {/* USP strip — restrained red */}
-      <div className="rounded-3xl border border-white/[0.08] bg-[#141414] p-8 md:p-10 lg:p-12">
-        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#9a9a9a]">
+      <div className="rounded-[2rem] border border-white/[0.06] bg-[#101010] p-8 md:p-10 lg:p-12">
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#8a8a8a]">
           One library · Every screen
         </p>
-        <h2 className="mt-4 text-3xl font-bold tracking-tight text-white md:text-4xl">
-          Works on Mobile, Tablet & <span className="text-[#E50914]">TV</span>
+        <h2 className="mt-4 font-heading text-3xl text-white md:text-5xl">
+          Works on Mobile, Tablet & TV
         </h2>
         <p className="mt-4 max-w-3xl text-base leading-relaxed text-[#c4c4c4] md:text-lg">
           Keep your offline media arranged once — then browse and play the same organized library on phone,
@@ -81,7 +81,7 @@ export function DevicePlatforms() {
             <a
               key={id}
               href={`#${id}`}
-              className="flex items-center gap-3 rounded-2xl border border-white/[0.08] bg-[#090909] px-4 py-3.5 transition hover:border-white/20"
+              className="flex items-center gap-3 rounded-2xl border border-white/[0.06] bg-[#070707] px-4 py-3.5 transition duration-200 hover:border-white/20"
             >
               <Icon className="h-5 w-5 text-white/70" aria-hidden />
               <span className="font-medium text-white">{label}</span>
@@ -104,7 +104,7 @@ export function DevicePlatforms() {
                 <device.Icon className="h-4 w-4" aria-hidden />
                 {device.label}
               </div>
-              <h3 className="mt-5 text-2xl font-semibold tracking-tight text-white md:text-3xl">{device.title}</h3>
+              <h3 className="mt-5 font-heading text-2xl text-white md:text-4xl">{device.title}</h3>
               <p className="mt-4 leading-relaxed text-[#c4c4c4]">{device.description}</p>
               <ul className="mt-6 space-y-3">
                 {device.points.map((point) => (
@@ -122,7 +122,7 @@ export function DevicePlatforms() {
             </div>
             <div className={reversed ? "lg:order-1" : undefined}>
               <div
-                className={`relative overflow-hidden rounded-2xl border border-white/[0.08] bg-[#141414] p-4 ${
+                className={`relative overflow-hidden rounded-3xl border border-white/[0.06] bg-[#101010] p-4 ${
                   device.aspect === "phone" ? "mx-auto max-w-xs" : ""
                 }`}
               >
@@ -143,13 +143,12 @@ export function DevicePlatforms() {
         );
       })}
 
-      <div className="rounded-2xl border border-white/[0.08] bg-[#141414] p-8 text-center">
+      <div className="rounded-[2rem] border border-white/[0.06] bg-[#101010] p-8 text-center">
         <p className="text-[#c4c4c4]">
           Organize once. Watch anywhere you have Android — phone, tablet, or TV.
         </p>
-        <div className="mt-5 flex flex-wrap items-center justify-center gap-3">
-          <GooglePlayBadge variant="button" placement="features_devices" />
-          <GooglePlayBadge height={48} placement="features_devices_badge" />
+        <div className="mt-6 flex justify-center">
+          <StoreCta placement="features_devices" />
         </div>
       </div>
     </div>

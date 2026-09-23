@@ -123,9 +123,10 @@ export function softwareJsonLd() {
     name: siteConfig.brandName,
     alternateName: siteConfig.tagline,
     applicationCategory: "MultimediaApplication",
-    operatingSystem: "Android",
+    operatingSystem: "Android, iOS",
     offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
     downloadUrl: siteConfig.playStoreUrl,
+    installUrl: [siteConfig.playStoreUrl, siteConfig.appStoreUrl],
   };
 }
 

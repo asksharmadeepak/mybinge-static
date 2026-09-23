@@ -45,11 +45,11 @@ export default function CollectionPlannerPage() {
 
   return (
     <div className="mx-auto w-full max-w-4xl px-4 py-12 md:px-8 md:py-16">
-      <h1 className="text-4xl font-semibold text-white">Collection Planner</h1>
+      <h1 className="font-heading text-4xl text-white md:text-5xl">Collection Planner</h1>
       <p className="mt-3 text-[#c4c4c4]">
         Estimate storage needs and generate a recommended folder layout for your offline movie library.
       </p>
-      <div className="mt-8 rounded-2xl border border-white/[0.08] bg-[#141414] p-6">
+      <div className="mt-8 rounded-2xl border border-white/[0.06] bg-[#101010] p-6">
         <div className="grid gap-4 sm:grid-cols-2">
           <div>
             <label className="mb-2 block text-sm text-[#c4c4c4]" htmlFor="lib-name">
@@ -59,7 +59,7 @@ export default function CollectionPlannerPage() {
               id="lib-name"
               value={libraryName}
               onChange={(e) => setLibraryName(e.target.value)}
-              className="w-full rounded-xl border border-white/20 bg-[#090909] px-4 py-3 text-white"
+              className="w-full rounded-xl border border-white/20 bg-[#070707] px-4 py-3 text-white"
             />
           </div>
           <div>
@@ -70,7 +70,7 @@ export default function CollectionPlannerPage() {
               id="quality"
               value={quality}
               onChange={(e) => setQuality(e.target.value as keyof typeof GB_PER_MOVIE)}
-              className="w-full rounded-xl border border-white/20 bg-[#090909] px-4 py-3 text-white"
+              className="w-full rounded-xl border border-white/20 bg-[#070707] px-4 py-3 text-white"
             >
               <option value="480p">480p</option>
               <option value="720p">720p</option>
@@ -88,7 +88,7 @@ export default function CollectionPlannerPage() {
               min={0}
               value={movieCount}
               onChange={(e) => setMovieCount(Number(e.target.value))}
-              className="w-full rounded-xl border border-white/20 bg-[#090909] px-4 py-3 text-white"
+              className="w-full rounded-xl border border-white/20 bg-[#070707] px-4 py-3 text-white"
             />
           </div>
           <div>
@@ -101,7 +101,7 @@ export default function CollectionPlannerPage() {
               min={0}
               value={tvEpisodes}
               onChange={(e) => setTvEpisodes(Number(e.target.value))}
-              className="w-full rounded-xl border border-white/20 bg-[#090909] px-4 py-3 text-white"
+              className="w-full rounded-xl border border-white/20 bg-[#070707] px-4 py-3 text-white"
             />
           </div>
         </div>
@@ -110,22 +110,22 @@ export default function CollectionPlannerPage() {
           Include Anime folder
         </label>
         <div className="mt-6 grid gap-4 sm:grid-cols-3">
-          <div className="rounded-xl border border-white/10 bg-[#090909] p-4">
+          <div className="rounded-xl border border-white/10 bg-[#070707] p-4">
             <p className="text-sm text-[#c4c4c4]">Movies</p>
             <p className="text-xl text-white">{estimate.movieGb.toFixed(0)} GB</p>
           </div>
-          <div className="rounded-xl border border-white/10 bg-[#090909] p-4">
+          <div className="rounded-xl border border-white/10 bg-[#070707] p-4">
             <p className="text-sm text-[#c4c4c4]">TV episodes</p>
             <p className="text-xl text-white">{estimate.tvGb.toFixed(0)} GB</p>
           </div>
-          <div className="rounded-xl border border-white/10 bg-[#090909] p-4">
+          <div className="rounded-xl border border-white/10 bg-[#070707] p-4">
             <p className="text-sm text-[#c4c4c4]">Total estimate</p>
             <p className="text-xl text-white">
               {estimate.totalGb.toFixed(0)} GB ({estimate.totalTb.toFixed(2)} TB)
             </p>
           </div>
         </div>
-        <pre className="mt-6 overflow-auto rounded-xl border border-white/10 bg-[#090909] p-4 text-sm text-white">
+        <pre className="mt-6 overflow-auto rounded-xl border border-white/10 bg-[#070707] p-4 text-sm text-white">
           {structure}
         </pre>
       </div>

@@ -10,42 +10,44 @@ declare global {
   }
 }
 
-type GooglePlayBadgeProps = {
+type AppStoreBadgeProps = {
   className?: string;
   height?: number;
   trackEvent?: string;
   placement?: string;
 };
 
-export function GooglePlayBadge({
+export function AppStoreBadge({
   className = "",
   height = 48,
   trackEvent = "download_cta_click",
   placement = "unknown",
-}: GooglePlayBadgeProps) {
+}: AppStoreBadgeProps) {
   return (
     <Link
-      href={siteConfig.playStoreUrl}
+      href={siteConfig.appStoreUrl}
       target="_blank"
       rel="noopener noreferrer"
       className={`inline-block opacity-90 transition duration-200 hover:opacity-100 ${className}`}
       onClick={() => {
         window.gtag?.("event", trackEvent, {
           event_category: "download",
-          link_url: siteConfig.playStoreUrl,
-          destination: siteConfig.playStoreUrl,
+          store: "app_store",
+          link_url: siteConfig.appStoreUrl,
+          destination: siteConfig.appStoreUrl,
           placement,
           page_path: window.location.pathname,
         });
       }}
     >
       <Image
-        src={siteConfig.assets.googlePlayBadge}
-        alt="Get it on Google Play"
-        width={Math.round(height * (214 / 108))}
+        src={siteConfig.assets.appStoreBadge}
+        alt="Download on the App Store"
+        width={Math.round(height * (119.66407 / 40))}
         height={height}
-        className="h-auto w-auto rounded-[9px] border border-white"
+        className="h-auto w-auto"
         style={{ height }}
+        unoptimized
       />
     </Link>
   );

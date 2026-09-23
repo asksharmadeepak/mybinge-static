@@ -20,7 +20,7 @@ export function AppShowcase({ variant = "hero", device = "tv" }: AppShowcaseProp
     return (
       <div className={`relative mx-auto w-full ${isTv ? "max-w-3xl" : "max-w-sm md:max-w-md"}`}>
         <div className="absolute -inset-3 rounded-[2rem] bg-[#E50914]/[0.08] blur-3xl" aria-hidden />
-        <div className="relative overflow-hidden rounded-[2rem] border border-white/[0.08] bg-[#141414] p-4">
+        <div className="relative overflow-hidden rounded-[2rem] border border-white/[0.06] bg-[#101010] p-4">
           <Image
             src={src}
             alt={alt}
@@ -61,7 +61,7 @@ export function AppShowcase({ variant = "hero", device = "tv" }: AppShowcaseProp
       {shots.map((shot) => (
         <figure
           key={shot.src}
-          className="overflow-hidden rounded-2xl border border-white/[0.08] bg-[#141414] p-4"
+          className="overflow-hidden rounded-2xl border border-white/[0.06] bg-[#101010] p-4"
         >
           <Image
             src={shot.src}

@@ -1,53 +1,50 @@
 import Link from "next/link";
-import { BookOpen, Scale, Wrench, PenLine } from "lucide-react";
 
 const hubCards = [
   {
-    Icon: BookOpen,
-    title: "Expert Guides",
-    description: "Step-by-step guides to organize your media like a pro.",
-    href: "/guides/how-to-organize-downloaded-movies",
-    cta: "Organize downloaded movies",
+    title: "Guides",
+    description: "Folder structure, naming, metadata, TV seasons.",
+    href: "/guides",
+    index: "01",
   },
   {
-    Icon: Scale,
-    title: "Honest Comparisons",
-    description: "Compare MyBinge with Plex, Jellyfin, Kodi and more.",
+    title: "Comparisons",
+    description: "MyBinge vs Plex, Jellyfin, Kodi, VLC.",
     href: "/comparisons",
-    cta: "View Comparisons",
+    index: "02",
   },
   {
-    Icon: Wrench,
-    title: "Free Tools",
-    description: "Powerful online tools to manage your media effortlessly.",
+    title: "Tools",
+    description: "Filename formatter, folders, episode tracker.",
     href: "/tools",
-    cta: "Use Tools",
+    index: "03",
   },
   {
-    Icon: PenLine,
-    title: "Latest Blog",
-    description: "Tips, tutorials and insights on media management.",
+    title: "Blog",
+    description: "Workflows, formats, and library hygiene.",
     href: "/blog",
-    cta: "Read Articles",
+    index: "04",
   },
 ];
 
 export function ContentHubCards() {
   return (
-    <section className="mx-auto w-full max-w-7xl px-4 py-16 md:px-8 md:py-20">
-      <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+    <section className="mx-auto w-full max-w-7xl px-4 py-16 md:px-8 md:py-24">
+      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#8a8a8a]">Learn first</p>
+      <h2 className="mt-3 font-heading text-3xl text-white md:text-5xl">Then install.</h2>
+      <div className="mt-12 divide-y divide-white/[0.06] border-y border-white/[0.06]">
         {hubCards.map((card) => (
           <Link
             key={card.href}
             href={card.href}
-            className="group rounded-2xl border border-white/[0.08] bg-[#141414] p-7 transition hover:border-white/20 hover:bg-[#1a1a1a]"
+            className="group grid gap-2 py-7 transition duration-200 md:grid-cols-[80px_1fr_auto] md:items-baseline md:gap-8"
           >
-            <card.Icon className="h-7 w-7 text-white/55" strokeWidth={1.75} aria-hidden />
-            <h3 className="mt-5 text-lg font-semibold text-white">{card.title}</h3>
-            <p className="mt-2 text-sm leading-relaxed text-[#c4c4c4]">{card.description}</p>
-            <p className="mt-6 text-xs font-semibold uppercase tracking-wider text-white/50 transition group-hover:text-white">
-              {card.cta} →
-            </p>
+            <span className="text-xs tracking-wider text-[#8a8a8a]">{card.index}</span>
+            <span>
+              <span className="font-heading text-2xl text-white md:text-3xl">{card.title}</span>
+              <span className="mt-2 block text-sm text-[#c4c4c4]">{card.description}</span>
+            </span>
+            <span className="text-sm text-white/40 transition group-hover:text-white">Open →</span>
           </Link>
         ))}
       </div>

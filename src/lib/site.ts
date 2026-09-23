@@ -6,6 +6,8 @@ export const siteConfig = {
     "Build and organize a beautiful offline media library for downloaded movies, TV shows, and personal videos.",
   domain: "https://offlinemedialibrary.com",
   playStoreUrl: "https://play.google.com/store/apps/details?id=com.mybinge.app",
+  appStoreUrl:
+    process.env.NEXT_PUBLIC_APP_STORE_URL || "https://apps.apple.com/app/mybinge-offline-movie-library",
   linkedInContactUrl:
     "https://www.linkedin.com/messaging/compose?recipient=iamsharmadeepak",
   assets: {
@@ -14,6 +16,7 @@ export const siteConfig = {
     logoLockup: "/logo-lockup.png",
     logoTagline: "/brand/logo-tagline-source.png",
     googlePlayBadge: "/badges/google-play.png",
+    appStoreBadge: "/badges/app-store.svg",
     heroDevices: "/hero-devices.png",
     icons: {
       features: {

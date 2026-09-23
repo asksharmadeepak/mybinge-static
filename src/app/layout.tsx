@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist } from "next/font/google";
+import { Geist, Newsreader } from "next/font/google";
 import Script from "next/script";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
@@ -16,6 +16,12 @@ import "./globals.css";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+});
+
+const newsreader = Newsreader({
+  variable: "--font-display",
+  subsets: ["latin"],
+  display: "swap",
 });
 
 const defaultTitle = `${siteConfig.brandName} | ${siteConfig.tagline}`;
@@ -77,8 +83,8 @@ export default function RootLayout({
 }>) {
   const gaId = process.env.NEXT_PUBLIC_GA_ID ?? "G-9YL4SQSQHK";
   return (
-    <html lang="en" className={`${geistSans.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col bg-[#090909] font-sans text-white antialiased [font-family:var(--font-geist-sans),ui-sans-serif,system-ui,sans-serif]">
+    <html lang="en" className={`${geistSans.variable} ${newsreader.variable} h-full antialiased`}>
+      <body className="flex min-h-full flex-col bg-[#070707] font-sans text-white antialiased [font-family:var(--font-geist-sans),ui-sans-serif,system-ui,sans-serif]">
         {gaId ? (
           <>
             <Script src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`} strategy="afterInteractive" />

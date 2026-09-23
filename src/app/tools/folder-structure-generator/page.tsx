@@ -24,9 +24,9 @@ export default function FolderStructureGeneratorPage() {
 
   return (
     <div className="mx-auto w-full max-w-4xl px-4 py-12 md:px-8 md:py-16">
-      <h1 className="text-4xl font-semibold text-white">Folder Structure Generator</h1>
+      <h1 className="font-heading text-4xl text-white md:text-5xl">Folder Structure Generator</h1>
       <p className="mt-3 text-[#c4c4c4]">Build a consistent folder template for scalable offline media management.</p>
-      <div className="mt-8 rounded-2xl border border-white/[0.08] bg-[#141414] p-6">
+      <div className="mt-8 rounded-2xl border border-white/[0.06] bg-[#101010] p-6">
         <label className="mb-2 block text-sm text-[#c4c4c4]" htmlFor="library-name">
           Library root name
         </label>
@@ -34,13 +34,13 @@ export default function FolderStructureGeneratorPage() {
           id="library-name"
           value={libraryName}
           onChange={(event) => setLibraryName(event.target.value)}
-          className="w-full rounded-xl border border-white/20 bg-[#090909] px-4 py-3 text-white"
+          className="w-full rounded-xl border border-white/20 bg-[#070707] px-4 py-3 text-white"
         />
         <label className="mt-4 flex items-center gap-2 text-sm text-[#c4c4c4]">
           <input checked={includeAnime} onChange={(event) => setIncludeAnime(event.target.checked)} type="checkbox" />
           Include anime folder branch
         </label>
-        <pre className="mt-6 overflow-auto rounded-xl border border-white/10 bg-[#090909] p-4 text-sm text-white">
+        <pre className="mt-6 overflow-auto rounded-xl border border-white/10 bg-[#070707] p-4 text-sm text-white">
           {structure}
         </pre>
       </div>
