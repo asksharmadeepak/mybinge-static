@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Newsreader } from "next/font/google";
 import Script from "next/script";
 import { SiteFooter } from "@/components/site-footer";
@@ -12,6 +12,12 @@ import {
 } from "@/lib/seo";
 import { siteConfig } from "@/lib/site";
 import "./globals.css";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  themeColor: "#070707",
+};
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

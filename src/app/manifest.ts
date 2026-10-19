@@ -3,9 +3,9 @@ import type { MetadataRoute } from "next";
 export default function manifest(): MetadataRoute.Manifest {
   return {
     name: "OfflineMediaLibrary.com",
-    short_name: "MyBinge SEO",
+    short_name: "MyBinge",
     description:
-      "SEO-first guides and tools for organizing offline media libraries while promoting MyBinge downloads.",
+      "Guides and tools for organizing offline media libraries — and MyBinge for phone, tablet, and TV.",
     start_url: "/",
     display: "standalone",
     background_color: "#090909",

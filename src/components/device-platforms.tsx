@@ -34,12 +34,12 @@ const devices = [
       "Great for family sharing on the couch",
       "Same metadata, favorites, and watch progress",
     ],
-    // Wide sign-in / marketing layout until a dedicated tablet screenshot is available
-    image: siteConfig.assets.screenshots.tvLogin,
-    imageAlt: "MyBinge on a large screen — offline playback and USB drives",
+    // TV landscape framed as tablet until a dedicated tablet screenshot is available
+    image: siteConfig.assets.screenshots.tvHome,
+    imageAlt: "MyBinge library on tablet — posters, categories, and offline playback",
     imageWidth: 1280,
     imageHeight: 720,
-    aspect: "wide" as const,
+    aspect: "tablet" as const,
   },
   {
     id: "tv",
@@ -132,7 +132,11 @@ export function DevicePlatforms() {
                   width={device.imageWidth}
                   height={device.imageHeight}
                   className={`w-full rounded-xl object-cover ${
-                    device.aspect === "wide" ? "aspect-video" : "aspect-[9/16]"
+                    device.aspect === "phone"
+                      ? "aspect-[9/16]"
+                      : device.aspect === "tablet"
+                        ? "aspect-[4/3]"
+                        : "aspect-video"
                   }`}
                   loading="lazy"
                   sizes={device.aspect === "phone" ? "320px" : "(max-width: 1024px) 100vw, 50vw"}

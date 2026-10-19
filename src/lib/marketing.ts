@@ -14,6 +14,32 @@ export const featureList = [
   "Recently Added",
 ];
 
+type FeatureIconKey =
+  | "organize"
+  | "library"
+  | "play"
+  | "track"
+  | "search"
+  | "favorites"
+  | "customize";
+
+/** Short blurbs for the homepage feature grid (same labels as featureList). */
+export const featureGridItems: { title: string; body: string; icon: FeatureIconKey }[] = [
+  { title: "Movies", body: "Poster grids for films you already own.", icon: "library" },
+  { title: "TV Shows", body: "Season lists and episode progress.", icon: "organize" },
+  { title: "Anime & Animation", body: "Long series next to live-action titles.", icon: "play" },
+  { title: "Smart Metadata", body: "Match titles to posters and overviews.", icon: "search" },
+  { title: "Continue Watching", body: "Pick up where you left off on any screen.", icon: "track" },
+  { title: "Offline Playback", body: "Play from phone, USB, or TV storage.", icon: "play" },
+  { title: "Favorites", body: "Pin the titles you revisit most.", icon: "favorites" },
+  { title: "Categories", body: "Browse by type without folder gymnastics.", icon: "organize" },
+  { title: "Smart Search", body: "Find real titles, not torrent filenames.", icon: "search" },
+  { title: "Beautiful Posters", body: "A streaming-style shelf for local files.", icon: "library" },
+  { title: "Watch Progress", body: "Resume films and episodes automatically.", icon: "track" },
+  { title: "Subtitles", body: "Keep soft subs with your offline files.", icon: "customize" },
+  { title: "Recently Added", body: "See what landed in the library last.", icon: "library" },
+];
+
 export const faqItems = [
   {
     q: "What is an offline media library?",

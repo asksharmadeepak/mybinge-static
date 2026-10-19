@@ -9,10 +9,12 @@ const footerLinks = [
   { href: "/comparisons", label: "Comparisons" },
   { href: "/tools", label: "Tools" },
   { href: "/blog", label: "Blog" },
+  { href: "/faq", label: "FAQ" },
   { href: "/download", label: "Screenshots" },
   { href: "/about", label: "About" },
   { href: "/privacy-policy", label: "Privacy" },
   { href: "/terms-conditions", label: "Terms" },
+  { href: "/cookie-policy", label: "Cookies" },
   { href: "/contact", label: "Contact" },
   { href: "/sitemap.xml", label: "Sitemap" },
 ];

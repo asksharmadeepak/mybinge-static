@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { DevicePlatforms } from "@/components/device-platforms";
 import { SimplePage } from "@/components/simple-page";
 import { buildMetadata } from "@/lib/seo";
-import { featureList } from "@/lib/marketing";
+import { featureGridItems } from "@/lib/marketing";
+import { siteConfig } from "@/lib/site";
 
 export const metadata: Metadata = buildMetadata({
   title: "MyBinge Features — Mobile, Tablet & TV Offline Media Library",
@@ -28,16 +30,28 @@ export default function FeaturesPage() {
         <p className="mt-3 text-[#c4c4c4]">
           Core capabilities that keep your whole local library tidy on every device.
         </p>
-        <div className="mt-8 flex flex-wrap gap-2">
-          {featureList.map((feature) => (
-            <span
-              key={feature}
-              className="rounded-full border border-white/[0.06] bg-[#101010] px-4 py-2 text-sm text-[#e8e8e8]"
+        <ul className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {featureGridItems.map((feature) => (
+            <li
+              key={feature.title}
+              className="rounded-2xl border border-white/[0.06] bg-[#101010] px-4 py-4"
             >
-              {feature}
-            </span>
+              <div className="flex items-start gap-3">
+                <Image
+                  src={siteConfig.assets.icons.features[feature.icon]}
+                  alt=""
+                  width={28}
+                  height={28}
+                  className="mt-0.5 h-7 w-7 shrink-0 opacity-80"
+                />
+                <div>
+                  <h3 className="text-sm font-semibold text-white">{feature.title}</h3>
+                  <p className="mt-1.5 text-sm leading-relaxed text-[#9a9a9a]">{feature.body}</p>
+                </div>
+              </div>
+            </li>
           ))}
-        </div>
+        </ul>
       </section>
     </SimplePage>
   );

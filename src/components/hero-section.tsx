@@ -4,6 +4,8 @@ import { StoreBadgeRow } from "@/components/store-badge-row";
 import { siteConfig } from "@/lib/site";
 
 export function HeroSection() {
+  const { mobileHome, tvHome, tvMovies } = siteConfig.assets.screenshots;
+
   return (
     <section className="relative overflow-hidden bg-[#070707]">
       <div
@@ -36,28 +38,59 @@ export function HeroSection() {
           </div>
         </div>
 
-        <div className="relative z-10 mx-auto w-full max-w-xl md:-mr-4 md:max-w-none lg:-mr-8">
-          <div className="relative">
-            <Image
-              src={siteConfig.assets.heroDevices}
-              alt="MyBinge offline media library on laptop and phone — movies, TV shows, and Continue Watching"
-              width={1024}
-              height={682}
-              className="w-full object-contain"
-              priority
-              sizes="(max-width: 768px) 100vw, 55vw"
-            />
-            <div
-              className="pointer-events-none absolute inset-0"
-              style={{
-                background: "radial-gradient(ellipse 72% 68% at 55% 48%, transparent 52%, #070707 94%)",
-              }}
-              aria-hidden
-            />
-            <div className="pointer-events-none absolute inset-x-0 top-0 h-14 bg-gradient-to-b from-[#070707] to-transparent" aria-hidden />
-            <div className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#070707] to-transparent" aria-hidden />
-            <div className="pointer-events-none absolute inset-y-0 left-0 w-10 bg-gradient-to-r from-[#070707] to-transparent md:w-14" aria-hidden />
-            <div className="pointer-events-none absolute inset-y-0 right-0 w-8 bg-gradient-to-l from-[#070707] to-transparent md:w-12" aria-hidden />
+        <div className="relative z-10 mx-auto w-full max-w-lg md:max-w-none">
+          <div
+            className="relative mx-auto aspect-[5/4] w-full max-w-[520px] md:max-w-none"
+            role="img"
+            aria-label="MyBinge offline media library on phone, tablet, and TV"
+          >
+            {/* TV — back, wide letterbox */}
+            <div className="absolute left-[4%] right-[2%] top-[6%] z-0 overflow-hidden rounded-xl border border-white/[0.1] bg-[#101010] shadow-2xl shadow-black/50">
+              <div className="bg-[#070707] px-2 pb-2 pt-1.5 md:px-3 md:pb-3 md:pt-2">
+                <div className="relative aspect-video w-full overflow-hidden rounded-md bg-black">
+                  <Image
+                    src={tvMovies}
+                    alt=""
+                    width={1024}
+                    height={616}
+                    className="h-full w-full object-cover object-top"
+                    priority
+                    sizes="(max-width: 768px) 90vw, 45vw"
+                  />
+                </div>
+                <div className="mx-auto mt-1.5 h-1 w-10 rounded-full bg-white/15 md:mt-2 md:h-1.5 md:w-14" aria-hidden />
+              </div>
+            </div>
+
+            {/* Tablet — mid, landscape chrome with TV shot */}
+            <div className="absolute bottom-[8%] right-[0%] z-10 w-[58%] overflow-hidden rounded-2xl border border-white/[0.12] bg-[#141414] p-2 shadow-2xl shadow-black/60 md:bottom-[6%] md:w-[55%] md:p-2.5">
+              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-lg bg-black">
+                <Image
+                  src={tvHome}
+                  alt=""
+                  width={1024}
+                  height={616}
+                  className="h-full w-full object-cover object-top"
+                  priority
+                  sizes="(max-width: 768px) 50vw, 28vw"
+                />
+              </div>
+            </div>
+
+            {/* Phone — front */}
+            <div className="absolute bottom-0 left-[2%] z-20 w-[34%] max-w-[160px] overflow-hidden rounded-[1.35rem] border border-white/[0.14] bg-[#101010] p-1.5 shadow-2xl shadow-black/70 md:left-[4%] md:w-[32%] md:max-w-[180px] md:rounded-[1.5rem] md:p-2">
+              <div className="relative aspect-[9/16] w-full overflow-hidden rounded-[1.1rem] bg-black">
+                <Image
+                  src={mobileHome}
+                  alt=""
+                  width={484}
+                  height={1024}
+                  className="h-full w-full object-cover object-top"
+                  priority
+                  sizes="180px"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>

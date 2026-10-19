@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { HeroSection } from "@/components/hero-section";
 import { OutcomeRow } from "@/components/outcome-row";
@@ -7,7 +8,7 @@ import { CtaStrip } from "@/components/cta-strip";
 import { Section } from "@/components/section";
 import { FaqAccordion } from "@/components/faq-accordion";
 import { buildMetadata, breadcrumbJsonLd, faqPageJsonLd } from "@/lib/seo";
-import { faqItems, featureList, homeFaqItems, homeSeoSections } from "@/lib/marketing";
+import { faqItems, featureGridItems, homeFaqItems, homeSeoSections } from "@/lib/marketing";
 import { siteConfig } from "@/lib/site";
 
 export const metadata = buildMetadata({
@@ -70,35 +71,58 @@ export default function HomePage() {
       <section className="mx-auto w-full max-w-7xl px-4 py-16 md:px-8 md:py-24">
         <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#8a8a8a]">In the library</p>
         <h2 className="mt-3 font-heading text-3xl text-white md:text-5xl">What you get</h2>
-        <div className="mt-10 flex flex-wrap gap-2">
-          {featureList.map((feature) => (
-            <span
-              key={feature}
-              className="rounded-full border border-white/[0.06] bg-[#101010] px-4 py-2 text-sm text-[#e8e8e8]"
-            >
-              {feature}
-            </span>
-          ))}
-        </div>
+        <ul className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          {featureGridItems.map((feature) => {
+            const iconSrc = feature.icon
+              ? siteConfig.assets.icons.features[feature.icon]
+              : undefined;
+            return (
+              <li
+                key={feature.title}
+                className="rounded-2xl border border-white/[0.06] bg-[#101010] px-4 py-4"
+              >
+                <div className="flex items-start gap-3">
+                  {iconSrc ? (
+                    <Image
+                      src={iconSrc}
+                      alt=""
+                      width={28}
+                      height={28}
+                      className="mt-0.5 h-7 w-7 shrink-0 opacity-80"
+                    />
+                  ) : null}
+                  <div>
+                    <h3 className="text-sm font-semibold text-white">{feature.title}</h3>
+                    <p className="mt-1.5 text-sm leading-relaxed text-[#9a9a9a]">{feature.body}</p>
+                  </div>
+                </div>
+              </li>
+            );
+          })}
+        </ul>
       </section>
 
       <section className="mx-auto w-full max-w-7xl px-4 py-16 md:px-8 md:py-24">
-        <div className="max-w-2xl">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#8a8a8a]">Field notes</p>
-          <div className="mt-8 space-y-16">
-            {homeSeoSections.map((block) => (
-              <article key={block.title}>
-                <h2 className="font-heading text-3xl leading-tight text-white md:text-4xl">{block.title}</h2>
-                <div className="mt-6 space-y-5 text-[#c4c4c4]">
-                  {block.paragraphs.map((paragraph) => (
-                    <p key={paragraph.slice(0, 40)} className="leading-relaxed">
-                      {paragraph}
-                    </p>
-                  ))}
-                </div>
-              </article>
-            ))}
-          </div>
+        <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#8a8a8a]">Field notes</p>
+        <h2 className="mt-3 max-w-3xl font-heading text-3xl text-white md:text-5xl">
+          Practical guides for local media.
+        </h2>
+        <div className="mt-10 grid gap-8 md:grid-cols-2 md:gap-10">
+          {homeSeoSections.map((block) => (
+            <article
+              key={block.title}
+              className="rounded-2xl border border-white/[0.06] bg-[#0c0c0c] px-5 py-6 md:px-6 md:py-7"
+            >
+              <h3 className="font-heading text-2xl leading-tight text-white md:text-[1.65rem]">
+                {block.title}
+              </h3>
+              <div className="mt-5 space-y-4 text-sm leading-relaxed text-[#c4c4c4] md:text-[0.95rem]">
+                {block.paragraphs.map((paragraph) => (
+                  <p key={paragraph.slice(0, 40)}>{paragraph}</p>
+                ))}
+              </div>
+            </article>
+          ))}
         </div>
       </section>
 
