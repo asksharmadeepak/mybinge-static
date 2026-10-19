@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <!-- Required so YouTube receives a valid embed referrer (fixes Error 153 in Capacitor iOS). -->
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
+    <title>MyBinge YouTube</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        overflow: hidden;
+      }
+      iframe {
+        border: 0;
+        width: 100%;
+        height: 100%;
+        display: block;
+      }
+      .err {
+        color: #c4c4c4;
+        font: 14px/1.4 system-ui, sans-serif;
+        padding: 24px;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      (function () {
+        var params = new URLSearchParams(window.location.search);
+        var id = params.get("v") || "";
+        if (!/^[a-zA-Z0-9_-]{11}$/.test(id)) {
+          document.body.innerHTML = '<p class="err">Invalid video.</p>';
+          return;
+        }
+        var autoplay = params.get("autoplay") === "0" ? "0" : "1";
+        var origin = encodeURIComponent(window.location.origin);
+        var src =
+          "https://www.youtube-nocookie.com/embed/" +
+          id +
+          "?autoplay=" +
+          autoplay +
+          "&playsinline=1&rel=0&modestbranding=1&iv_load_policy=3&origin=" +
+          origin;
+        var iframe = document.createElement("iframe");
+        iframe.src = src;
+        iframe.allow =
+          "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen";
+        iframe.allowFullscreen = true;
+        iframe.referrerPolicy = "strict-origin-when-cross-origin";
+        iframe.title = "YouTube video";
+        document.body.appendChild(iframe);
+      })();
+    </script>
+  </body>
+</html>
