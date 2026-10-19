@@ -56,7 +56,7 @@ export default function OpenGraphImage() {
             Build Your Own Offline Media Library
           </h1>
           <p style={{ color: "#c4c4c4", fontSize: 26, marginTop: 20, maxWidth: 900, lineHeight: 1.4 }}>
-            Organize downloaded movies, TV shows, and personal videos — then watch offline on phone, tablet, and TV.
+            Manage movies, TV shows, animation, and personal videos locally — then watch offline on phone, tablet, and TV.
           </p>
         </div>
 

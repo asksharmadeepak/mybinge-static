@@ -1,15 +1,15 @@
 const outcomes = [
   {
     title: "Faster discovery",
-    body: "Poster grids and search that understand movie titles — not torrent filenames. Find a title in seconds instead of scrolling a Downloads folder.",
+    body: "Poster grids and search that understand titles — movies, shows, and anime — not torrent filenames. Find anything in seconds instead of scrolling Downloads.",
   },
   {
     title: "Cleaner watch history",
-    body: "Continue Watching and per-episode progress keep the family on the same page. Resume on phone or TV without guessing the file.",
+    body: "Continue Watching and per-episode progress keep series and films organized. Resume on phone or TV without guessing the file.",
   },
   {
     title: "Better metadata",
-    body: "Match posters and overviews from names like Movie Title (Year). Fix outliers once; new files follow the same rule.",
+    body: "Match posters and overviews from names like Movie Title (Year) or Show Name S01E01. Fix outliers once; new files follow the same rule.",
   },
 ];
 

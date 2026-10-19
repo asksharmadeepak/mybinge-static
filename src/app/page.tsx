@@ -13,7 +13,7 @@ import { siteConfig } from "@/lib/site";
 export const metadata = buildMetadata({
   title: "Build Your Own Offline Media Library",
   description:
-    "Learn how to organize downloaded movies, TV shows, and personal videos into a scalable offline media library with MyBinge — guides, tools, and FAQs for Android movie collectors.",
+    "Learn how to manage local movies, TV shows, animation, and personal videos in one offline media library with MyBinge — guides, tools, and FAQs for people who keep their own files.",
   path: "/",
 });
 

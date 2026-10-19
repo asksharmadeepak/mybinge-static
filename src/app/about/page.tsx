@@ -20,9 +20,9 @@ export default function AboutPage() {
       ]}
     >
       <p>
-        OfflineMediaLibrary.com is built for people who keep downloaded movies, TV episodes, and personal videos
-        outside streaming platforms. Our mission is to make offline media organization simple, searchable, and
-        future-proof.
+        OfflineMediaLibrary.com is built for people who manage their own local media — movies, TV shows, animation,
+        and personal videos — outside streaming platforms. Our mission is to make offline media organization simple,
+        searchable, and future-proof.
       </p>
       <p>
         We publish practical guides, comparison breakdowns, and lightweight tools that help you maintain a high-quality

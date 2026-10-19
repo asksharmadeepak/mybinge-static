@@ -17,21 +17,21 @@ export function HeroSection() {
             {siteConfig.brandName} · {siteConfig.tagline}
           </p>
           <h1 className="mt-5 font-heading text-4xl leading-[1.15] text-white md:text-5xl lg:text-6xl">
-            Your movies.
+            Your local media.
             <br />
             Offline. Beautiful.
           </h1>
           <p className="mt-6 max-w-md text-lg leading-relaxed text-[#c4c4c4]">
-            Organize downloaded movies, TV shows, and personal videos into a private library — posters, Continue
-            Watching, phone to TV.
+            Manage movies, TV shows, animation, and personal videos in one private library — posters, seasons,
+            Continue Watching, phone to TV. Your files stay on your devices.
           </p>
           <div className="mt-9 flex flex-wrap items-center gap-5">
             <StoreBadgeRow height={52} placement="hero" />
             <Link
-              href="/download"
-              className="text-sm font-medium text-white/70 underline-offset-4 transition duration-200 hover:text-white hover:underline"
+              href="/#product"
+              className="inline-flex items-center rounded-full border border-white/[0.12] bg-white/[0.04] px-4 py-2 text-sm font-medium text-white/85 transition duration-200 hover:border-white/25 hover:bg-white/[0.08] hover:text-white"
             >
-              See it on screen
+              See it on Phone, Tablet & TV
             </Link>
           </div>
         </div>
@@ -40,7 +40,7 @@ export function HeroSection() {
           <div className="relative">
             <Image
               src={siteConfig.assets.heroDevices}
-              alt="MyBinge offline media library on laptop and phone with movie posters and Continue Watching"
+              alt="MyBinge offline media library on laptop and phone — movies, TV shows, and Continue Watching"
               width={1024}
               height={682}
               className="w-full object-contain"

@@ -10,7 +10,7 @@ const devices = [
     label: "Mobile",
     title: "Phone-ready offline library",
     description:
-      "Carry your movies and TV shows on Android. Browse posters, continue watching, and play from phone storage, SD card, or USB OTG — fully offline.",
+      "Carry movies, TV shows, and animation on Android. Browse posters, continue watching, and play from phone storage, SD card, or USB OTG — fully offline.",
     points: [
       "Poster grid and smart search on the go",
       "Continue Watching synced when you sign in",
@@ -47,11 +47,11 @@ const devices = [
     label: "Android TV",
     title: "Couch-first big-screen playback",
     description:
-      "Add videos from this device or USB on TV. Manage profiles and paths on phone — then settle in for Continue Watching and My Movies on the big screen.",
+      "Add videos from this device or USB on TV. Manage profiles and paths on phone — then settle in for Continue Watching across films, series, and anime.",
     points: [
       "Remote-friendly navigation and poster rows",
       "Browse videos from device storage or USB",
-      "Save movies on phone; watch them on TV",
+      "Manage the library on phone; watch on TV",
     ],
     image: siteConfig.assets.screenshots.tvSettings,
     imageAlt: "MyBinge settings on Android TV — browse videos from USB",
@@ -73,8 +73,8 @@ export function DevicePlatforms() {
           Works on Mobile, Tablet & TV
         </h2>
         <p className="mt-4 max-w-3xl text-base leading-relaxed text-[#c4c4c4] md:text-lg">
-          Keep your offline media arranged once — then browse and play the same organized library on phone,
-          tablet, and Android TV. No subscriptions. No internet required for playback.
+          Keep movies, shows, animation, and personal videos arranged once — then browse and play the same
+          local library on phone, tablet, and Android TV. No subscriptions. No internet required for playback.
         </p>
         <div className="mt-8 grid gap-3 sm:grid-cols-3">
           {devices.map(({ Icon, label, id }) => (

@@ -40,7 +40,10 @@ export const metadata: Metadata = {
   keywords: [
     "offline media library",
     "MyBinge",
+    "local media library",
     "organize downloaded movies",
+    "TV shows offline",
+    "anime library Android",
     "Android TV media library",
     "offline movie organizer",
     "personal Netflix",

@@ -3,7 +3,7 @@ export const siteConfig = {
   brandName: "MyBinge",
   tagline: "Offline Media Library",
   description:
-    "Build and organize a beautiful offline media library for downloaded movies, TV shows, and personal videos.",
+    "Build and manage a local offline media library for movies, TV shows, animation, and personal videos — on phone, tablet, and TV.",
   domain: "https://offlinemedialibrary.com",
   playStoreUrl: "https://play.google.com/store/apps/details?id=com.mybinge.app",
   appStoreUrl:
