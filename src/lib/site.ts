@@ -10,6 +10,13 @@ export const siteConfig = {
     process.env.NEXT_PUBLIC_APP_STORE_URL || "https://apps.apple.com/app/mybinge-offline-movie-library",
   linkedInContactUrl:
     "https://www.linkedin.com/messaging/compose?recipient=iamsharmadeepak",
+  /** Sibling D labs properties for footer cross-promo (brand anchors only). */
+  dlabs: {
+    developerPlayUrl: "https://play.google.com/store/apps/dev?id=8759041902208147900",
+    nextBingePlayUrl: "https://play.google.com/store/apps/details?id=com.nextbinge.app",
+    homeworkBuddySiteUrl: "https://easyhomeworkactivity.com",
+    homeworkBuddyPlayUrl: "https://play.google.com/store/apps/details?id=com.homeworkbuddy.app",
+  },
   assets: {
     brandMark: "/brand-mark.png",
     brandMarkTrimmed: "/brand-mark.png",
@@ -57,3 +64,17 @@ export const siteConfig = {
 } as const;
 
 export type NavItem = (typeof siteConfig.nav)[number];
+
+/** Play Store URL with UTM params for D labs cross-promo attribution. */
+export function playStoreUrlWithUtm(
+  baseUrl: string,
+  content: string,
+  source = "offlinemedialibrary",
+) {
+  const url = new URL(baseUrl);
+  url.searchParams.set("utm_source", source);
+  url.searchParams.set("utm_medium", "referral");
+  url.searchParams.set("utm_campaign", "dlabs_cross_promo");
+  url.searchParams.set("utm_content", content);
+  return url.toString();
+}

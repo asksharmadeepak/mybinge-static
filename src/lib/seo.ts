@@ -112,7 +112,13 @@ export function organizationJsonLd() {
     alternateName: siteConfig.tagline,
     url: siteConfig.domain,
     logo: absoluteUrl("/brand-mark.png"),
-    sameAs: [siteConfig.linkedInContactUrl],
+    sameAs: [
+      siteConfig.linkedInContactUrl,
+      siteConfig.playStoreUrl,
+      siteConfig.dlabs.developerPlayUrl,
+      siteConfig.dlabs.homeworkBuddySiteUrl,
+      siteConfig.dlabs.nextBingePlayUrl,
+    ],
   };
 }
 
